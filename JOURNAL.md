@@ -56,3 +56,16 @@ stored key but continues after individual skipped events.
 Unknown: peer discovery, federation admission, and the Reticulum caller.
 
 Next: trace discovery and federation eligibility.
+
+## 2026-11-22 — finding 0004: discovery and federation
+
+Examined `discover_peers` and `federation_allows`.
+
+Learned: discovery stores only peer IDs derived from their advertised keys and
+enforces response and table caps. Same-cluster peers bypass federation policy
+and minimum-trust checks.
+
+Unknown: the source and administration of cluster membership, and the concrete
+policy implementation.
+
+Next: trace `same_cluster` and `FederationPolicy`.
