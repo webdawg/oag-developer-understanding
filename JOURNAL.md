@@ -190,3 +190,14 @@ bearer-token boundary.
 Unknown: whether human HTML routes bypass the gate.
 
 Next: inspect human read routes.
+
+## 2026-11-22 — finding 0015: human UI key transport
+
+Examined human authentication and link generation.
+
+Learned: HTML reads use the same key and `graph:read` permission, but carry the
+raw key in query strings and generated links.
+
+Unknown: whether logs redact that query parameter.
+
+Next: trace human routing and request logging.
