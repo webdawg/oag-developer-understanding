@@ -814,3 +814,13 @@ Learned: the unauthenticated page does not fetch content, but it can embed the f
 Unknown: Reticulum ingress authentication.
 
 Next: trace the Reticulum listener.
+
+## 2026-11-22 — finding 0074: Reticulum sync ingress
+
+Examined the Reticulum listener, request handler, and configuration default.
+
+Learned: TCP listening is opt-in. When enabled, hello, event, and peer requests are unauthenticated and can return signed event payloads and peer addresses. A global rate limit is not authentication.
+
+Unknown: whether the HTTP sync event endpoint adds a federation or payload bound that Reticulum lacks.
+
+Next: compare HTTP sync event retrieval.
