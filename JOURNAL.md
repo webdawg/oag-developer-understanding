@@ -1334,3 +1334,13 @@ Learned: the server returns existing rows in the requested window. It does not p
 Unknown: whether a failed range is retried forever or the next tick advances.
 
 Next: trace the 1000-event clamp and resume behavior.
+
+## 2026-11-22 — finding 0126: gap retry
+
+Compared the fetch start with origin advancement.
+
+Learned: a gap does not advance the contiguous head, so the next tick repeats it. A successful page of at most 1000 events resumes after the new head. There is no quarantine.
+
+Unknown: whether a forked origin is skipped on later fetches.
+
+Next: trace `local_heads` and fork flags during sync.
