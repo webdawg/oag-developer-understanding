@@ -604,3 +604,13 @@ Learned: semantic search scans all stored embeddings and resolves nodes directly
 Unknown: when embeddings are built, refreshed, and invalidated.
 
 Next: trace embedding lifecycle.
+
+## 2026-11-22 — finding 0053: embedding lifecycle
+
+Examined embedding recomputation and its CLI command.
+
+Learned: embeddings are wiped and rebuilt in a batch. Normal writes do not refresh them, so semantic search can lag node changes until an operator runs recomputation.
+
+Unknown: authority recomputation and whether its scores affect search.
+
+Next: trace authority scoring.
