@@ -574,3 +574,13 @@ Learned: name plus type is not unique. The lookup asks SQLite for one optional r
 Unknown: node alias duplication and read behavior.
 
 Next: trace node alias insertion and lookup.
+
+## 2026-11-22 — finding 0050: node aliases
+
+Examined alias schema, insertion, listing, and repository search use.
+
+Learned: aliases are unique only per node. Repeats preserve the first row, duplicate text may identify multiple nodes, and no inspected reverse lookup resolves an alias to one node.
+
+Unknown: lexical search disclosure and suppression behavior.
+
+Next: trace node search and suppression.
