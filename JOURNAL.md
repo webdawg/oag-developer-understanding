@@ -1294,3 +1294,13 @@ Learned: a missing threshold is 1. Zero accepts any existing base-cluster edge b
 Unknown: whether a claim report's observed value hash is format-checked.
 
 Next: trace claim-report verification.
+
+## 2026-11-22 — finding 0122: claim value string
+
+Examined `UnsignedClaimReport` and `verify`.
+
+Learned: the signature and 300-second clock check do not validate `observed_value_hash` as a hash. Agreement is exact string equality. The hash example in the comment is intent, not a check.
+
+Unknown: whether any mesh caller computes a content hash before signing.
+
+Next: search for `blake3_content_hash` in the mesh crate.
