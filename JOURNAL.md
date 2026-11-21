@@ -400,3 +400,14 @@ integers.
 Unknown: whether Data Roads contains executable implementation.
 
 Next: inventory Data Roads.
+
+## 2026-11-22 — finding 0033: Data Roads classification
+
+Inventoried the tracked Data Roads files and read its README.
+
+Learned: the repository is an RFC and companion paper. Its proposed core and mesh
+integration has no executable implementation in the tracked inventory.
+
+Unknown: detailed RFC requirements and unresolved design sections.
+
+Next: extract the RFC's ownership and access requirements as proposals.
