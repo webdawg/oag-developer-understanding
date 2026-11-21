@@ -764,3 +764,13 @@ Learned: the client downloads the full success body before hash and receipt veri
 Unknown: whether the server-side transfer response enforces a size bound.
 
 Next: trace the server transfer response limit.
+
+## 2026-11-22 — finding 0069: server transfer size boundary
+
+Examined the server response construction in `fetch_with_receipt_inner`.
+
+Learned: the handler hashes and returns the full fetched vector and records its length. No transfer-specific maximum was found. Provider-level limits remain unverified.
+
+Unknown: IPFS provider fetch bounds and authentication.
+
+Next: trace provider fetch limits.
