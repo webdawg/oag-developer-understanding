@@ -994,3 +994,13 @@ Learned: any self-signed fresh heartbeat creates a presence row without a peer-t
 Unknown: whether a cluster claim can likewise be stored before the peer row and still bypass federation.
 
 Next: confirm cluster-claim storage prerequisites.
+
+## 2026-11-22 — finding 0092: cluster claim without membership
+
+Examined `post_cluster` and `same_cluster`.
+
+Learned: a self-signed cluster claim is stored without a peer-table row and can bypass federation for that new peer ID. It still does not prove authorization to use the cluster name.
+
+Unknown: whether the federation bypass alone lets events be fetched when the verifying key is absent.
+
+Next: trace the fetch loop's key requirement after federation allows the origin.
