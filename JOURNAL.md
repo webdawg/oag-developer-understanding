@@ -774,3 +774,13 @@ Learned: the handler hashes and returns the full fetched vector and records its 
 Unknown: IPFS provider fetch bounds and authentication.
 
 Next: trace provider fetch limits.
+
+## 2026-11-22 — finding 0070: IPFS fetch accumulation
+
+Examined Kubo-compatible and embedded IPFS fetch implementations.
+
+Learned: both accumulate every chunk into a vector. No size cap is visible in either function. The Kubo path can attach a bearer API key, but that is endpoint authentication, not a byte limit.
+
+Unknown: client timeout, redirects, and whether the configured IPFS endpoint is trusted.
+
+Next: trace the Kubo HTTP client builder.
