@@ -884,3 +884,13 @@ Learned: the stored address is the pre-redirect argument. The peer identity come
 Unknown: whether hello heads can falsify replication status through that path.
 
 Next: trace known-head updates from hello.
+
+## 2026-11-22 — finding 0081: self-reported replication
+
+Examined hello head storage and `replication_status`.
+
+Learned: a hello sequence at least as high as the local head counts as fully caught up. The target is at least 3 and grows with the square root of known peers. The inspected function reports the result; it does not itself change replication behavior.
+
+Unknown: whether any caller uses `meets_target` as an operational gate.
+
+Next: search callers of replication status.
