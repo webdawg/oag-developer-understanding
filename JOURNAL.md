@@ -1324,3 +1324,13 @@ Learned: a missing next sequence is rejected and not queued. An exact duplicate 
 Unknown: whether the sync client can still offer a gapped sequence.
 
 Next: trace the sync client's range fetch.
+
+## 2026-11-22 — finding 0125: sync range contiguity
+
+Examined the client range request, server query, and ingest loop.
+
+Learned: the server returns existing rows in the requested window. It does not prove the first row is the requested start. A hole becomes a sequence-gap error and stops that origin's batch. An empty window is not an error.
+
+Unknown: whether a failed range is retried forever or the next tick advances.
+
+Next: trace the 1000-event clamp and resume behavior.
