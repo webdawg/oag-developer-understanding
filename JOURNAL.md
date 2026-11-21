@@ -584,3 +584,13 @@ Learned: aliases are unique only per node. Repeats preserve the first row, dupli
 Unknown: lexical search disclosure and suppression behavior.
 
 Next: trace node search and suppression.
+
+## 2026-11-22 — finding 0051: search suppression
+
+Examined lexical search, FTS triggers, query sanitization, and suppression.
+
+Learned: search matches quoted sanitized terms in name, description, and canonical identifier. Admin suppression excludes a node from that query without deleting graph state or preventing direct lookup.
+
+Unknown: whether semantic search honors the same suppression table.
+
+Next: trace semantic search and embeddings.
