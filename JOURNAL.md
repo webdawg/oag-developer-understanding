@@ -1314,3 +1314,13 @@ Learned: mesh never calls `blake3_content_hash`. Tests sign literal `blake3:` st
 Unknown: how core remote ingest treats a missing sequence number.
 
 Next: trace ingest gap handling.
+
+## 2026-11-22 — finding 0124: sequence gaps
+
+Examined `ingest_remote_event` and `validate_chain`.
+
+Learned: a missing next sequence is rejected and not queued. An exact duplicate at an occupied sequence is `AlreadyKnown`. A different event at that sequence is a recorded fork and does not advance the head.
+
+Unknown: whether the sync client can still offer a gapped sequence.
+
+Next: trace the sync client's range fetch.
