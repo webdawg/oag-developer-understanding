@@ -434,3 +434,13 @@ Learned: the RFC is explicitly unimplemented. It separates identity, ownership, 
 Unknown: mesh transport's actual persistence and retry behavior.
 
 Next: trace mesh transport push behavior.
+
+## 2026-11-22 — finding 0036: mesh transport durability
+
+Examined `MeshState`, bridge receive/push, and both broadcast helpers.
+
+Learned: accepted mesh state is in memory. Broadcast is best-effort, does not retry higher proof-of-work demands, and a 204 does not establish network-wide replication.
+
+Unknown: anonymous-event deduplication and difficulty escalation.
+
+Next: trace anonymous-event recording.
