@@ -248,3 +248,15 @@ protection.
 Unknown: relay hop bounds and authenticated path history.
 
 Next: trace relay loop prevention.
+
+## 2026-11-22 — finding 0020: relay hop bounds
+
+Examined `relay_gateway_query` and signed request construction.
+
+Learned: this implementation stops at zero remaining hops, appends itself to the
+path, and skips relays already in that path. The bound travels in the signed
+request, but cross-version enforcement remains unverified.
+
+Unknown: mesh's actual dependency revision and imported core surface.
+
+Next: compare mesh and core revisions and begin the connection register.
