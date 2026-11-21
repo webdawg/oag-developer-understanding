@@ -329,3 +329,15 @@ production caller does so. Tests only read counts.
 Unknown: imagination's locked core revision and imported surface.
 
 Next: pin and compare imagination.
+
+## 2026-11-22 — finding 0027: imagination revision skew
+
+Examined imagination manifest and lockfile.
+
+Learned: imagination locks a third core revision, `4bdef2d0`, and directly
+depends on `oag-storage` as well as core and crypto.
+
+Unknown: whether that locked storage source matches inspected core and which
+functions imagination calls.
+
+Next: fetch and compare the locked storage revision.
