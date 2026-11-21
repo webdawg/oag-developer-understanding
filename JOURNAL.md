@@ -1044,3 +1044,13 @@ Learned: HTTP rejects a peer ID that does not derive from its advertised key. Th
 Unknown: whether discovered Reticulum addresses are later dialed automatically.
 
 Next: trace use of stored `reticulum:` addresses.
+
+## 2026-11-22 — finding 0097: Reticulum address label
+
+Searched readers of the `reticulum:` address prefix and compared them with HTTP gossip.
+
+Learned: the prefix is written once and never parsed. HTTP gossip can later treat it as a URL base. It is not a dial plan.
+
+Unknown: whether malformed addresses are retried forever and how they mix with bootstrap addresses.
+
+Next: trace gossip address enumeration and deduplication.
