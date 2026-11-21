@@ -504,3 +504,13 @@ Learned: assertions are tagged `ASSERT_RELATION` and flattened into the signed e
 Unknown: which raw inputs converge to one canonical identifier and node ID.
 
 Next: trace identifier canonicalization.
+
+## 2026-11-22 — finding 0043: identifier canonicalization
+
+Examined assertion input canonicalization and URL normalization.
+
+Learned: HTTP(S) inputs get selected normalization and a `url:` prefix; scheme-like strings pass through lowercased; other text becomes a concept slug. These strings determine node identity.
+
+Unknown: actor declaration and API-key lifecycle.
+
+Next: trace actor and API-key creation.
