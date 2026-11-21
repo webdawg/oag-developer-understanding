@@ -165,3 +165,16 @@ Unknown: evidence weights, URI grouping, observation weights, and freshness
 constants.
 
 Next: trace those scoring inputs.
+
+## 2026-11-22 — finding 0013: evidence weights and groups
+
+Examined URI grouping, evidence weights, verification weights, and freshness.
+
+Learned: a group contributes only its strongest weight, so repeated citations
+from one URI family or actor do not multiply independence. Freshness decays on a
+180-day half-life.
+
+Unknown: read authorization boundaries for search, corroboration, and direct
+graph reads.
+
+Next: compare those permission checks.
