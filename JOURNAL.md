@@ -714,3 +714,13 @@ Learned: traversal is bidirectional, cycle-safe, and status-unfiltered. `max_nod
 Unknown: REST default depth and maximum, and whether request values are clamped.
 
 Next: trace subgraph API limits.
+
+## 2026-11-22 — finding 0064: subgraph request limits
+
+Examined the subgraph handler and query struct.
+
+Learned: omitted depth and max-nodes default to 1 and 200, but supplied values are not clamped.
+
+Unknown: whether identifier resolution chooses one node or returns candidates.
+
+Next: trace `resolve`.
