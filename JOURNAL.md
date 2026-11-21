@@ -674,3 +674,13 @@ Learned: MCP uses the same key lookup and service permission checks as REST. It 
 Unknown: listend retrieval authentication and content-addressed serving.
 
 Next: trace listend serving.
+
+## 2026-11-22 — finding 0060: listend HTTP access
+
+Examined HTTP routes and `AudioStore::serve` at listend `aad2d9b2`.
+
+Learned: the HTTP carrier has no authentication or TLS in the inspected server. Hash listing and content retrieval are public, and publication is gated only by audio sniffing and size.
+
+Unknown: collisions query cutoff and ranking behavior.
+
+Next: trace collisions query ranking.
