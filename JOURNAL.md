@@ -1304,3 +1304,13 @@ Learned: the signature and 300-second clock check do not validate `observed_valu
 Unknown: whether any mesh caller computes a content hash before signing.
 
 Next: search for `blake3_content_hash` in the mesh crate.
+
+## 2026-11-22 — finding 0123: absent content-hash caller
+
+Searched mesh call sites and compared them with the inspected core hash helper.
+
+Learned: mesh never calls `blake3_content_hash`. Tests sign literal `blake3:` strings. Core defines the helper, but mesh locks a different core git revision that was not re-read.
+
+Unknown: how core remote ingest treats a missing sequence number.
+
+Next: trace ingest gap handling.
