@@ -634,3 +634,13 @@ Learned: rebuild deletes derived graph rows and replays the event log, while pre
 Unknown: what evidence redaction removes and whether raw event payloads remain readable.
 
 Next: trace evidence redaction.
+
+## 2026-11-22 — finding 0056: evidence redaction limits
+
+Examined evidence redaction, provenance, and history.
+
+Learned: admin redaction blanks projected title and excerpt and records a tombstone. History still deserializes and returns the original canonical event payload to `graph:read` callers.
+
+Unknown: whether actor identity-URI redaction has the same event-log residue.
+
+Next: trace actor identity redaction.
