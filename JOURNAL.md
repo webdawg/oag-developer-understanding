@@ -1064,3 +1064,13 @@ Learned: every stored address is retried on every tick. Failures do not remove i
 Unknown: whether any other loop caches addresses across ticks.
 
 Next: confirm gossip has no long-lived address cache beyond the current tick.
+
+## 2026-11-22 — finding 0099: per-tick address copy
+
+Examined both gossip loops and peer address deletion.
+
+Learned: addresses are copied into a local vector each tick. Removal is visible on the next tick, but the current tick can still use its copy. Bootstrap addresses are captured at spawn and are not removed with peer rows.
+
+Unknown: whether bootstrap addresses are validated before the loop starts.
+
+Next: trace bootstrap address configuration.
