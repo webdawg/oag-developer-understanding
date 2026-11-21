@@ -834,3 +834,13 @@ Learned: HTTP event reads are unauthenticated and do not check federation. The c
 Unknown: the exact sync rate-limit window and whether it is global or per caller.
 
 Next: trace `SyncRateLimiter`.
+
+## 2026-11-22 — finding 0076: global sync rate limit
+
+Examined `SyncRateLimiter`.
+
+Learned: the limit is 600 requests per process per minute, with no per-caller identity. It bounds aggregate load but does not authenticate readers or prevent one caller from crowding out others.
+
+Unknown: the exact fields returned by HTTP hello and peer-list routes.
+
+Next: trace those sync disclosure routes.
