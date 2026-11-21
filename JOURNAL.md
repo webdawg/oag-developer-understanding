@@ -388,3 +388,15 @@ different failure semantics. Write completion is not fsync durability.
 Unknown: collisions indexing, query, and eviction behavior.
 
 Next: trace collisions.
+
+## 2026-11-22 — finding 0032: collisions prefix contradiction
+
+Examined insertion, query, and constructor comments.
+
+Learned: one prefix level shifts away all but the highest bit, despite a comment
+saying it indexes exact hashes. Buckets store string IDs, not merely small
+integers.
+
+Unknown: whether Data Roads contains executable implementation.
+
+Next: inventory Data Roads.
