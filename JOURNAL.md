@@ -934,3 +934,13 @@ Learned: a missing persistent key file generates a new peer and saves it with mo
 Unknown: whether ephemeral mode still opens and writes the persistent database.
 
 Next: trace ephemeral startup against the database path.
+
+## 2026-11-22 — finding 0086: ephemeral identity scope
+
+Examined identity configuration and serve startup.
+
+Learned: ephemeral mode generates a fresh signing identity but opens the same SQLite file. It does not create a disposable database or sandbox.
+
+Unknown: whether the new peer ID starts a separate origin chain in that database.
+
+Next: connect ephemeral identity to per-peer origin sequencing.
