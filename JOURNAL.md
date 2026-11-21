@@ -1024,3 +1024,13 @@ Learned: all three production callers select a verifying key first. A cluster cl
 Unknown: whether the Reticulum client authenticates the remote destination before trusting its hello key.
 
 Next: trace Reticulum hello verification and link setup.
+
+## 2026-11-22 — finding 0095: Reticulum hello binding
+
+Examined announce waiting, hello checks, and Reticulum address derivation.
+
+Learned: the client matches the dialed address hash and checks that the hello key matches its own peer ID. It does not prove those two identities are the same. Library-level announce authenticity was not inspected.
+
+Unknown: whether Reticulum peer discovery checks key derivation before storing a peer.
+
+Next: compare Reticulum and HTTP peer discovery.
