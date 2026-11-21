@@ -1074,3 +1074,13 @@ Learned: addresses are copied into a local vector each tick. Removal is visible 
 Unknown: whether bootstrap addresses are validated before the loop starts.
 
 Next: trace bootstrap address configuration.
+
+## 2026-11-22 — finding 0100: bootstrap addresses
+
+Examined network configuration and serve startup.
+
+Learned: bootstrap peers are unvalidated strings. Empty means passive inbound replication. Non-empty strings are retried every 30 seconds by default without a load-time scheme or host check.
+
+Unknown: whether `oag peer add` validates or persists addresses.
+
+Next: trace manual peer addition.
