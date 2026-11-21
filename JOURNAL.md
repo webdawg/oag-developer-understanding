@@ -974,3 +974,13 @@ Learned: removal deletes addresses and the peer row only. Forks, known heads, an
 Unknown: whether presence and going-offline records grant trust after removal.
 
 Next: trace peer presence and trust scoring.
+
+## 2026-11-22 — finding 0090: presence survives removal
+
+Examined `compute_trust`, `trust_score`, and the removal statements.
+
+Learned: a missing peer row is treated as not forked, while a remaining presence row can still produce positive trust. Address-based restart grace cannot be found after addresses are deleted.
+
+Unknown: who can write a presence row for an arbitrary peer ID.
+
+Next: trace the presence heartbeat endpoint.
