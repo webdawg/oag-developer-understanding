@@ -534,3 +534,13 @@ Learned: the first empty database receives one printed admin key for a keyless s
 Unknown: crawl permission enforcement and private-network guards.
 
 Next: trace crawl authorization and egress checks.
+
+## 2026-11-22 — finding 0046: crawl network policy
+
+Examined the crawl handler, redirect validation, and blocked-IP predicate.
+
+Learned: `graph:crawl` authorizes triggering egress but cannot override the server's private-network policy. Redirects are revalidated and connections are pinned to checked addresses. This is not a universal SSRF proof.
+
+Unknown: robots, content-type acceptance, and what fetched content becomes in the graph.
+
+Next: trace post-guard crawl processing.
