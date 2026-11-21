@@ -894,3 +894,13 @@ Learned: a hello sequence at least as high as the local head counts as fully cau
 Unknown: whether any caller uses `meets_target` as an operational gate.
 
 Next: search callers of replication status.
+
+## 2026-11-22 — finding 0082: replication target is observational
+
+Searched crate callers of `meets_target` and read the CLI status commands.
+
+Learned: the value is printed or serialized. No inspected caller uses it to block a write, backup, or sync.
+
+Unknown: what `oag backup` copies and whether it includes key material.
+
+Next: trace the backup command.
