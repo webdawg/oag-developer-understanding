@@ -614,3 +614,13 @@ Learned: embeddings are wiped and rebuilt in a batch. Normal writes do not refre
 Unknown: authority recomputation and whether its scores affect search.
 
 Next: trace authority scoring.
+
+## 2026-11-22 — finding 0054: authority scoring
+
+Examined PageRank and authority recomputation.
+
+Learned: authority is an operator-triggered batch score over local edges. It is cleared and replaced, does not update on writes, and is not used by the inspected search rankers. Assertion status is not considered.
+
+Unknown: which projections rebuild preserves or replays.
+
+Next: trace rebuild behavior.
