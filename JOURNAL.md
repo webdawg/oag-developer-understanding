@@ -684,3 +684,13 @@ Learned: the HTTP carrier has no authentication or TLS in the inspected server. 
 Unknown: collisions query cutoff and ranking behavior.
 
 Next: trace collisions query ranking.
+
+## 2026-11-22 — finding 0061: collision ranking limits
+
+Examined `collide`, `collide_by_hamming`, and the eight-bit minimum prefix.
+
+Learned: Hamming ranking only reorders candidates already found by prefix buckets. Items differing in the top eight bits are invisible to the normal query, and a one-level index can produce an empty candidate loop.
+
+Unknown: whether default unigram SimHash ignores token order.
+
+Next: trace weighted SimHash accumulation.
