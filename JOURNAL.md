@@ -1114,3 +1114,13 @@ Learned: OAG only trims surrounding slashes and delegates. It does not validate 
 Unknown: accepted hash length and alphabet.
 
 Next: inspect the locked Reticulum address parser if available locally.
+
+## 2026-11-22 — finding 0104: Reticulum hash grammar
+
+Inspected locked reticulum 0.1.0 `AddressHash::new_from_hex_string`.
+
+Learned: the hash is 16 bytes. Strings shorter than 32 hex characters error. Longer strings use only the first 32 characters. Invalid digits panic through `unwrap` rather than returning `IncorrectHash`.
+
+Unknown: TCP client constructor validation.
+
+Next: trace `TcpClient::new` in the locked crate.
