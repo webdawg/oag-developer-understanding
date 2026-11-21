@@ -1014,3 +1014,13 @@ Learned: federation admission does not provide a verifying key. Non-contacted or
 Unknown: whether any other ingress accepts events after only a cluster claim.
 
 Next: search event-ingestion callers for a path that bypasses the stored-key requirement.
+
+## 2026-11-22 — finding 0094: ingest caller inventory
+
+Searched production `ingest_remote_event` callers and read the Reticulum client's key selection.
+
+Learned: all three production callers select a verifying key first. A cluster claim is not an ingestion path and cannot replace a missing key.
+
+Unknown: whether the Reticulum client authenticates the remote destination before trusting its hello key.
+
+Next: trace Reticulum hello verification and link setup.
