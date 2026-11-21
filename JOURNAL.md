@@ -424,3 +424,13 @@ unresolved. The RFC itself says several mesh-backed guarantees do not exist.
 Unknown: the linked mesh object-history RFC and its revision.
 
 Next: refresh the destination index and coverage summary.
+
+## 2026-11-22 — finding 0035: object-history proposal
+
+Read `oag-mesh/spec/07-object-history-and-ownership-rfc.md` at `9f5d89e9` and searched implementation crates.
+
+Learned: the RFC is explicitly unimplemented. It separates identity, ownership, custody, authorship, and access, and states that signatures and tags do not prove legal or physical facts.
+
+Unknown: mesh transport's actual persistence and retry behavior.
+
+Next: trace mesh transport push behavior.
