@@ -365,3 +365,14 @@ inspected adapter, so another peer cannot reproduce it from public state alone.
 Unknown: listend admission and content validation.
 
 Next: trace listend content admission.
+
+## 2026-11-22 — finding 0030: listend identity versus sniffing
+
+Examined `AudioItem::verify` and `AudioFormat::sniff`.
+
+Learned: BLAKE3 proves exact bytes, while sniffing recognizes selected
+signatures. Neither decodes or authorizes audio.
+
+Unknown: admission order, persistence, and eviction.
+
+Next: trace `AudioStore::accept`.
