@@ -411,3 +411,16 @@ integration has no executable implementation in the tracked inventory.
 Unknown: detailed RFC requirements and unresolved design sections.
 
 Next: extract the RFC's ownership and access requirements as proposals.
+
+## 2026-11-22 — finding 0034: unresolved Data Roads requirements
+
+Read the RFC terminology, principles, architecture, lifecycle, open questions,
+and security heading.
+
+Learned: ownership, custody, access, and compensation are explicitly separate,
+but event mappings, redundancy, renewal, disputes, and threat modeling are
+unresolved. The RFC itself says several mesh-backed guarantees do not exist.
+
+Unknown: the linked mesh object-history RFC and its revision.
+
+Next: refresh the destination index and coverage summary.
