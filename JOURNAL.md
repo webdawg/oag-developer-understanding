@@ -294,3 +294,15 @@ inspectably import core graph, event, storage, or sync services.
 Unknown: bridge declaration lifecycle and failure behavior.
 
 Next: trace one bridge declaration end to end.
+
+## 2026-11-22 — finding 0024: mesh bridge declarations
+
+Examined bridge signing, verification, and in-memory tree insertion.
+
+Learned: verification proves a self-signed claim and freshness. Distinct peers
+increase corroboration, while repeats do not. No authorization or persistence is
+implemented in this path.
+
+Unknown: the threshold that turns corroboration into accepted membership.
+
+Next: trace `MeshTree` corroboration rules.
