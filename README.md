@@ -9,9 +9,9 @@ License: [AGPL-3.0-or-later](LICENSE).
 ## Start here
 
 1. [JOURNAL.md](JOURNAL.md) — what has been investigated and what comes next.
-2. [flows/0001-local-assertion-commit.md](flows/0001-local-assertion-commit.md) — first vertical slice, once published.
-3. [specs/](specs/) — revision-scoped repository explanations.
-4. [findings/](findings/) — short, high-value mechanism findings.
+2. [findings/](findings/) — mechanism findings `0001` through `0034`.
+3. [flows/connection-register.md](flows/connection-register.md) — established and proposed cross-repository connections.
+4. [diagrams/0001-local-assertion-commit.md](diagrams/0001-local-assertion-commit.md) — local assertion sequence.
 
 This repository explains pinned revisions. It is not a promise about later
 upstream commits, and it does not modify the target repositories.
@@ -27,8 +27,27 @@ upstream commits, and it does not modify the target repositories.
 | [oag-imagination-random-data-compute](https://github.com/webdawg/oag-imagination-random-data-compute) | master | `7b7dcb8eae70b2df2fa1329fdb7b2dd928e76d29` |
 | [data-roads](https://github.com/webdawg/data-roads) | main | `b5cd2f4e8618f955eb06dd1c4d3edc7234041a7e` |
 
-Mesh and imagination lockfile revisions are not yet rechecked against these
-heads. Shared names are not evidence of runtime integration.
+Mesh locks core `ce1122589909c151056de33325b14d7022efe2f0`; its inspected
+`oag-core` and `oag-crypto` source matches the inspected core checkout.
+Imagination locks core `4bdef2d00b706b9d210b9f2b1678978f94a2b4f1`; its inspected
+core, crypto, and storage source also matches, and it reads core storage.
+Data Roads has no executable implementation. Shared names alone are not
+integration.
+
+## Current coverage
+
+- Core local assertion commit, remote ingestion, sync key selection, discovery,
+  federation, cluster admission, and cluster gossip.
+- Assertion identity, status transitions, visibility, and corroboration scoring.
+- REST read authorization, human-UI query keys, request-span fields, and gateway
+  signature, fanout, nonce, and relay bounds.
+- Mesh signing reuse, self-certified bridge declarations, and caller-selected
+  corroboration thresholds.
+- Imagination's one-shot storage read and seed-dependent routing.
+- Listend hash and signature admission, plus collisions prefix behavior.
+- Data Roads proposal boundaries and unresolved requirements.
+
+No target tests or services were executed. Coverage is not complete.
 
 ## Evidence labels
 
