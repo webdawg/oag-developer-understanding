@@ -1264,3 +1264,13 @@ Learned: a new cluster pays escalating proof of work. A repeat cluster name pays
 Unknown: which duplicates the best-value query hides.
 
 Next: trace `best_corroborated_value`.
+
+## 2026-11-22 — finding 0119: claim query dedup
+
+Examined `best_corroborated_value`.
+
+Learned: the query counts distinct clusters and peers and does not report stored duplicates. Equal counts have no stable tie break because the map iteration order is arbitrary.
+
+Unknown: how the HTTP response represents a missing claim versus a tie.
+
+Next: trace the best-value HTTP response.
