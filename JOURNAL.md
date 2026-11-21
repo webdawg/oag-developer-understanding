@@ -341,3 +341,15 @@ Unknown: whether that locked storage source matches inspected core and which
 functions imagination calls.
 
 Next: fetch and compare the locked storage revision.
+
+## 2026-11-22 — finding 0028: imagination storage read path
+
+Fetched locked core `4bdef2d0` and inspected `NodeAdapter::load`.
+
+Learned: the relevant crate source matches inspected core. Imagination reads one
+snapshot of a tensor pad and peer addresses. `open_pool` may apply embedded core
+migrations despite the adapter's own queries being reads.
+
+Unknown: randomness, reproducibility, and routing verification.
+
+Next: trace `SoftwareRandom` and engine routing.
