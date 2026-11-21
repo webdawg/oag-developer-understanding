@@ -271,3 +271,15 @@ Learned: mesh tracks core `main` but locks `ce112258`, not inspected core
 Unknown: actual API differences between those core revisions.
 
 Next: compare the locked and inspected `oag-core` and `oag-crypto` exports.
+
+## 2026-11-22 — finding 0022: locked source comparison
+
+Fetched locked core `ce112258` read-only and compared it with inspected core.
+
+Learned: `oag-core` and `oag-crypto` source directories are identical. The only
+changes between the commits are documentation and future-work files.
+
+Unknown: which shared types mesh actually imports and whether any runtime path
+connects the repositories.
+
+Next: inspect mesh exports and imports.
