@@ -1214,3 +1214,13 @@ Learned: broadcast returns unit and only logs per-peer failures. Direct push ret
 Unknown: whether a receiver relays an accepted message.
 
 Next: trace receive handlers for rebroadcast.
+
+## 2026-11-22 — finding 0114: mesh relay
+
+Compared receive handlers, broadcast call sites, and `spec/04-transport.md`.
+
+Learned: receivers do not relay. Broadcast reaches only the sender's configured peers. The specification agrees there is no anti-entropy pull. Its test count was not executed.
+
+Unknown: whether bridge submission has any authentication beyond the signature.
+
+Next: trace bridge-declaration admission.
