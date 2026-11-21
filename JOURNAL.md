@@ -794,3 +794,13 @@ Learned: pinning is disabled by default. Kubo is used only with an operator-conf
 Unknown: embedded listener exposure.
 
 Next: trace the embedded IPFS listen default.
+
+## 2026-11-22 — finding 0072: embedded listener default
+
+Examined embedded provider startup and its configuration default.
+
+Learned: embedded mode is opt-in, but its default listen address is all IPv4 interfaces on an ephemeral WebSocket port, with mDNS enabled. Actual bind and announcement behavior were not executed.
+
+Unknown: whether the public IPFS site page discloses those dial addresses.
+
+Next: trace `/ipfs-site/{cid}`.
