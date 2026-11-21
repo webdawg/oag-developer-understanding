@@ -1194,3 +1194,13 @@ Learned: sources always return 32 bytes. Hardware and missing real data fall bac
 Unknown: whether a real byte-device source reports short reads.
 
 Next: trace `DeviceRandom`.
+
+## 2026-11-22 — finding 0112: device randomness fallback
+
+Examined `DeviceRandom::next`.
+
+Learned: only an exact 32-byte device read is returned. Missing, unreadable, and short reads fall back to software randomness with no status bit or log, despite the comment calling the fallback documented.
+
+Unknown: whether mesh senders can observe a dropped in-memory message.
+
+Next: trace mesh transport delivery acknowledgements.
