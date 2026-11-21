@@ -594,3 +594,13 @@ Learned: search matches quoted sanitized terms in name, description, and canonic
 Unknown: whether semantic search honors the same suppression table.
 
 Next: trace semantic search and embeddings.
+
+## 2026-11-22 — finding 0052: semantic suppression gap
+
+Examined semantic ranking and embedding retrieval.
+
+Learned: semantic search scans all stored embeddings and resolves nodes directly. It does not consult the lexical suppression table, so suppression is not a global disclosure boundary.
+
+Unknown: when embeddings are built, refreshed, and invalidated.
+
+Next: trace embedding lifecycle.
