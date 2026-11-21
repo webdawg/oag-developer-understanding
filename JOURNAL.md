@@ -1344,3 +1344,13 @@ Learned: a gap does not advance the contiguous head, so the next tick repeats it
 Unknown: whether a forked origin is skipped on later fetches.
 
 Next: trace `local_heads` and fork flags during sync.
+
+## 2026-11-22 — finding 0127: forked origins stay eligible
+
+Examined fork marking, `local_heads`, and `federation_allows`.
+
+Learned: a fork flag does not remove the advertised head. Non-ephemeral sync does not consult it. Ephemeral mode rejects a forked peer unless a same-cluster claim bypasses the check first.
+
+Unknown: whether the conflicting event is served to later pullers.
+
+Next: trace `record_fork` against the events range query.
