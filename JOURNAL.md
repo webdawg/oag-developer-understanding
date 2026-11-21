@@ -1154,3 +1154,13 @@ Learned: HTTPS is refused. The accepted address is cleartext HTTP or a bare host
 Unknown: the startup mirror budget and failure behavior.
 
 Next: trace `mirror_existing`.
+
+## 2026-11-22 — finding 0108: startup mirror
+
+Examined `mirror_existing` and `offer_to_ipfs`.
+
+Learned: `--ipfs-api` offers every stored item that lacks a CID, within 30 seconds, without per-item confirmation. Failures are recorded and do not stop startup. The printed count is attempts, not successes.
+
+Unknown: whether failed mirrors are durable.
+
+Next: trace `persist_cid` and the mirror log lifetime.
