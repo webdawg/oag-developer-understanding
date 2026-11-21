@@ -4,7 +4,7 @@
 
 Examined the destination repository and recorded local or shallow-clone heads
 for all six targets. No target source was modified. No tests or services were
-run.
+run. Published as `6123450`.
 
 Pinned:
 
@@ -15,14 +15,18 @@ Pinned:
 - `oag-imagination-random-data-compute` `7b7dcb8eae70b2df2fa1329fdb7b2dd928e76d29`
 - `data-roads` `b5cd2f4e8618f955eb06dd1c4d3edc7234041a7e`
 
-Learned: the destination began with only `README.md` and `LICENSE`. The local
-core and mesh checkouts each have an untracked `TESTING_ROADMAP.md`; those files
-are outside this analysis and will not be published or treated as upstream
-source.
+## 2026-11-22 — finding 0001: local assertion commit
 
-Unknown: the actual local assertion path, its authorization boundary, transaction
-behavior, and remote-ingestion differences.
+Examined `create_assertion`, bearer authentication, permission checks, input
+bounds, `GraphService::assert`, `commit_event`, `commit_local_event`, and
+`project_assert_relation`.
 
-Next: trace one local assertion/event operation in `open-agent-graph` from its
-public entry point through signing, storage, projection, and response. Then
-compare it with remote ingestion.
+Learned: one assertion event is signed, inserted, projected, and origin-advanced
+in one transaction. Request evidence is committed afterward as separate events,
+so HTTP failure does not imply that the assertion was not committed.
+
+Unknown: crash recovery, multi-process locking, remote ingestion, and whether
+the HTTP route is actually mounted with additional body limits.
+
+Next: read `ingest_remote_event` and compare duplicate, gap, signature, and
+projection behavior with the local path.
