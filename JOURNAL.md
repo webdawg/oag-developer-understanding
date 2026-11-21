@@ -824,3 +824,13 @@ Learned: TCP listening is opt-in. When enabled, hello, event, and peer requests 
 Unknown: whether the HTTP sync event endpoint adds a federation or payload bound that Reticulum lacks.
 
 Next: compare HTTP sync event retrieval.
+
+## 2026-11-22 — finding 0075: HTTP sync read disclosure
+
+Examined `get_events`, its route comment, and the push path's federation check.
+
+Learned: HTTP event reads are unauthenticated and do not check federation. The comment equates author signatures with reader authorization, which the code does not enforce. The response is capped at 1,000 events.
+
+Unknown: the exact sync rate-limit window and whether it is global or per caller.
+
+Next: trace `SyncRateLimiter`.
