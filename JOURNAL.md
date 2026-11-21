@@ -864,3 +864,13 @@ Learned: addresses from a peer this node already syncs are stored verbatim and l
 Unknown: default redirect behavior and whether non-HTTP addresses are rejected by the HTTP client.
 
 Next: inspect sync address assumptions in tests and client errors.
+
+## 2026-11-22 — finding 0079: sync redirects
+
+Examined `SyncClient` and the locked reqwest 0.13.5 defaults.
+
+Learned: OAG has no scheme or host allowlist. The default client follows up to 10 redirects with no host filter and has no application-level total timeout. Peer-key checks happen after the redirected response.
+
+Unknown: whether the original address remains bound to the peer after a redirected hello.
+
+Next: trace address retention after hello.
