@@ -484,3 +484,13 @@ Learned: event ID and origin sequence are unique, but `INSERT OR IGNORE` turns c
 Unknown: canonical event identity and signature-domain binding.
 
 Next: trace event-ID derivation.
+
+## 2026-11-22 — finding 0041: event identity
+
+Examined event construction, canonical JSON, and ID derivation.
+
+Learned: the signature covers domain-prefixed canonical unsigned JSON. The event ID hashes the canonical signed envelope under the event domain again. Timestamp, sequence, predecessor, origin, payload, and signature can all change identity.
+
+Unknown: exact serialized field names for assertion payloads.
+
+Next: trace `AssertRelation` serialization.
