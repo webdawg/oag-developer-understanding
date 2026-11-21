@@ -1094,3 +1094,13 @@ Learned: the operator string is requested immediately and stored after a success
 Unknown: what `peer add-reticulum` trusts before dialing.
 
 Next: trace that command.
+
+## 2026-11-22 — finding 0102: Reticulum peer add
+
+Examined `peer_add_reticulum` and its dial call.
+
+Learned: the address hash is parsed, but the TCP endpoint is not validated by OAG. The command can create `identity.key` before dialing and can return success while reporting per-origin warnings.
+
+Unknown: the exact hash grammar and TCP constructor rejection behavior.
+
+Next: trace hash parsing and the TCP client constructor.
