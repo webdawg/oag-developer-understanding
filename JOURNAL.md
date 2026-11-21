@@ -1084,3 +1084,13 @@ Learned: bootstrap peers are unvalidated strings. Empty means passive inbound re
 Unknown: whether `oag peer add` validates or persists addresses.
 
 Next: trace manual peer addition.
+
+## 2026-11-22 — finding 0101: manual peer add
+
+Examined `peer_add` and the hello storage point.
+
+Learned: the operator string is requested immediately and stored after a successful hello. There is no prior allowlist. `peer_sync` rejects stored `reticulum:` addresses, unlike ordinary gossip.
+
+Unknown: what `peer add-reticulum` trusts before dialing.
+
+Next: trace that command.
