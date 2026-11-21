@@ -954,3 +954,13 @@ Learned: a new peer ID with no origin row starts at sequence 1. The old chain re
 Unknown: whether peers must discover the new key before accepting its first event, and whether the old peer remains advertised.
 
 Next: trace key discovery for a newly generated local identity.
+
+## 2026-11-22 — finding 0088: new peer key discovery
+
+Examined hello key selection, peer upsert, address uniqueness, and peer removal callers.
+
+Learned: a direct hello supplies the key for that peer's own events. Transitive origins need a stored derived key. A new identity is a new peer row; the old peer remains until an operator removes it, and the same address may be stored for both.
+
+Unknown: whether `remove_peer` cleans every related record.
+
+Next: trace `remove_peer` cleanup.
