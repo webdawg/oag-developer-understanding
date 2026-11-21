@@ -704,3 +704,13 @@ Learned: per-token bit votes are summed. The same tokens and weights produce the
 Unknown: subgraph traversal limits and cycle handling.
 
 Next: trace subgraph retrieval.
+
+## 2026-11-22 — finding 0063: subgraph traversal
+
+Examined `get_subgraph`.
+
+Learned: traversal is bidirectional, cycle-safe, and status-unfiltered. `max_nodes` is checked between edges, so one accepted edge and later frontier nodes can exceed the requested cap.
+
+Unknown: REST default depth and maximum, and whether request values are clamped.
+
+Next: trace subgraph API limits.
