@@ -744,3 +744,13 @@ Learned: transfer authentication is a self-signed peer request plus rate limitin
 Unknown: relay hop handling and arbitrary CID fetch cost.
 
 Next: trace transfer relay forwarding.
+
+## 2026-11-22 — finding 0067: transfer relay forwarding
+
+Examined `relay_fetch`.
+
+Learned: a verified caller can cause this peer to request its chosen CID from configured relays. Hop count and path membership bound forwarding; there is no CID allowlist in the inspected function.
+
+Unknown: response size limits and content-hash verification before bytes are returned.
+
+Next: trace `fetch_and_verify` result checks.
