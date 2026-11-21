@@ -318,3 +318,14 @@ belongs to it.
 Unknown: whether any production caller selects a default threshold.
 
 Next: trace claim-report corroboration into this tree.
+
+## 2026-11-22 — finding 0026: no selected threshold caller
+
+Searched mesh source for production threshold callers.
+
+Learned: the tree can filter by a caller-supplied minimum, but no inspected
+production caller does so. Tests only read counts.
+
+Unknown: imagination's locked core revision and imported surface.
+
+Next: pin and compare imagination.
