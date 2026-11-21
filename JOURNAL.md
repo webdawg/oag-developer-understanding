@@ -1354,3 +1354,13 @@ Learned: a fork flag does not remove the advertised head. Non-ephemeral sync doe
 Unknown: whether the conflicting event is served to later pullers.
 
 Next: trace `record_fork` against the events range query.
+
+## 2026-11-22 — finding 0128: fork evidence is not pulled
+
+Compared `peer_forks` with the events range query and the CLI reader.
+
+Learned: the conflicting signed JSON stays in `peer_forks`. Range fetch serves only the first event. A second conflict at the same sequence is ignored. The CLI can print the stored JSON locally.
+
+Unknown: whether a projection rebuild preserves `peer_forks`.
+
+Next: trace rebuild table handling.
