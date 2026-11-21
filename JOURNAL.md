@@ -105,3 +105,16 @@ known peer address and count attempts rather than acknowledgements.
 Unknown: the additional behavior of cluster gossip.
 
 Next: trace the cluster gossip loop.
+
+## 2026-11-22 — finding 0008: cluster gossip scheduling
+
+Examined both gossip loops and cluster address selection.
+
+Learned: cluster gossip uses the same sync operation but a narrower address set
+and independent interval. It can overlap ordinary gossip, and its membership
+inherits self-certified cluster claims.
+
+Unknown: concurrent same-address sync behavior and assertion projection identity
+rules.
+
+Next: trace assertion projection identities and repeated-write behavior.
