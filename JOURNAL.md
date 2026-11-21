@@ -213,3 +213,14 @@ explicitly outside bearer authentication.
 Unknown: the gateway's alternate trust boundary.
 
 Next: trace gateway query authentication.
+
+## 2026-11-22 — finding 0017: gateway signature boundary
+
+Examined gateway request verification, handler order, and resolution precedence.
+
+Learned: the handler proves key possession, integrity, and freshness, then rate
+limits. It does not show bearer or federation authorization.
+
+Unknown: fanout cost, quorum semantics, and later authorization checks.
+
+Next: trace gateway fanout and rate limiting.
