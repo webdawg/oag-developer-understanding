@@ -1274,3 +1274,13 @@ Learned: the query counts distinct clusters and peers and does not report stored
 Unknown: how the HTTP response represents a missing claim versus a tie.
 
 Next: trace the best-value HTTP response.
+
+## 2026-11-22 — finding 0120: best-value null versus tie
+
+Examined both best-value handlers and `ClaimAgreement`.
+
+Learned: a missing claim is HTTP 200 with `best: null`. A present claim returns one winner. Ties have no flag or alternate list. The route is unauthenticated and node-local.
+
+Unknown: how `min_bridge_corroboration` treats zero and a missing query value.
+
+Next: trace the cross-check threshold.
