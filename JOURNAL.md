@@ -1234,3 +1234,13 @@ Learned: admission checks key pairing, signature, and a 300-second clock window.
 Unknown: whether one signer can grow the in-memory tree without a bound.
 
 Next: trace `MeshTree` growth.
+
+## 2026-11-22 — finding 0116: bridge tree growth
+
+Examined `MeshTree` keys and the bridge route.
+
+Learned: identical edges deduplicate the signer. Distinct group or member strings add unbounded keys. No application string or edge cap was found. The framework body limit was not inspected.
+
+Unknown: whether the anonymous-event log has a retention cap.
+
+Next: trace anonymous-event recording and escalation.
