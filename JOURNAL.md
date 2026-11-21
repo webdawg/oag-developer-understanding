@@ -1374,3 +1374,13 @@ Learned: `peer_forks` is excluded from the wipe and is not replayed into `events
 Unknown: whether a revoked actor key rejects a remote event at ingest.
 
 Next: trace actor-key revocation against ingest.
+
+## 2026-11-22 — finding 0130: revocation versus ingest
+
+Compared assertion projection with `find_active_key`.
+
+Learned: remote ingest does not consult actor-key revocation. Local bearer authentication does. A revocation event sets a timestamp; it does not reject later peer-signed assertions.
+
+Unknown: whether projection uses event time or arrival order when a revocation and an assertion race.
+
+Next: trace projection ordering against `created_at`.
