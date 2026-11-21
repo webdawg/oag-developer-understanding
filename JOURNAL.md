@@ -1164,3 +1164,13 @@ Learned: `--ipfs-api` offers every stored item that lacks a CID, within 30 secon
 Unknown: whether failed mirrors are durable.
 
 Next: trace `persist_cid` and the mirror log lifetime.
+
+## 2026-11-22 — finding 0109: mirror durability
+
+Examined CID sidecars and the mirror log.
+
+Learned: only successful CIDs are persisted. Failures live in a 64-entry memory log and are retried after restart. A lost sidecar can also cause a successful item to be offered again.
+
+Unknown: collisions eviction order.
+
+Next: trace collisions index replacement and eviction.
