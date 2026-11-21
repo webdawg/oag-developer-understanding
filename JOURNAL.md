@@ -654,3 +654,13 @@ Learned: redaction blanks the projected URI and preserves a tombstone. The origi
 Unknown: what unauthenticated status and metrics routes disclose.
 
 Next: trace status and metrics disclosure.
+
+## 2026-11-22 — finding 0058: unauthenticated operational routes
+
+Examined `/api/v1/status` and `/metrics`.
+
+Learned: neither route uses bearer authentication. Status discloses the local peer ID, and metrics discloses aggregate graph, crawl, sync, database-size, and replication counts.
+
+Unknown: whether MCP uses the same authorization gates.
+
+Next: trace MCP authentication and tool permissions.
