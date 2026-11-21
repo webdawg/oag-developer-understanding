@@ -1224,3 +1224,13 @@ Learned: receivers do not relay. Broadcast reaches only the sender's configured 
 Unknown: whether bridge submission has any authentication beyond the signature.
 
 Next: trace bridge-declaration admission.
+
+## 2026-11-22 — finding 0115: bridge admission
+
+Examined the bridge route, `verify`, and `build_and_sign`.
+
+Learned: admission checks key pairing, signature, and a 300-second clock window. It does not authenticate the caller or rate-limit submissions. The self-reference check exists only in the signing helper, not in verification.
+
+Unknown: whether one signer can grow the in-memory tree without a bound.
+
+Next: trace `MeshTree` growth.
