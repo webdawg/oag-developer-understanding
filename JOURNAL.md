@@ -1034,3 +1034,13 @@ Learned: the client matches the dialed address hash and checks that the hello ke
 Unknown: whether Reticulum peer discovery checks key derivation before storing a peer.
 
 Next: compare Reticulum and HTTP peer discovery.
+
+## 2026-11-22 — finding 0096: Reticulum discovery guard
+
+Compared HTTP and Reticulum peer-list storage.
+
+Learned: HTTP rejects a peer ID that does not derive from its advertised key. The Reticulum loop stores the pair without that check. The first stored key is not replaced on conflict.
+
+Unknown: whether discovered Reticulum addresses are later dialed automatically.
+
+Next: trace use of stored `reticulum:` addresses.
