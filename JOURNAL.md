@@ -30,3 +30,17 @@ the HTTP route is actually mounted with additional body limits.
 
 Next: read `ingest_remote_event` and compare duplicate, gap, signature, and
 projection behavior with the local path.
+
+## 2026-11-22 — finding 0002: remote ingestion comparison
+
+Examined `ingest_remote_event`, `verify_and_derive_id`, and `validate_chain`.
+
+Learned: remote ingestion is idempotent for an exact duplicate, records a
+different same-sequence event as a fork without projecting it, and rejects both
+sequence gaps and predecessor mismatches. Its successful path shares insertion,
+projection, origin advancement, and transaction commit with local commit.
+
+Unknown: which caller supplies the trusted key, how sync requests ranges, and
+whether concurrent ingestion has a lock.
+
+Next: trace the caller and sync-range behavior.
