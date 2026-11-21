@@ -624,3 +624,13 @@ Learned: authority is an operator-triggered batch score over local edges. It is 
 Unknown: which projections rebuild preserves or replays.
 
 Next: trace rebuild behavior.
+
+## 2026-11-22 — finding 0055: rebuild preservation
+
+Examined projection clearing and replay.
+
+Learned: rebuild deletes derived graph rows and replays the event log, while preserving events, peer state, authority, embeddings, redactions, and search suppression. It reapplies redactions but does not refresh stale caches.
+
+Unknown: what evidence redaction removes and whether raw event payloads remain readable.
+
+Next: trace evidence redaction.
