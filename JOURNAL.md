@@ -260,3 +260,14 @@ request, but cross-version enforcement remains unverified.
 Unknown: mesh's actual dependency revision and imported core surface.
 
 Next: compare mesh and core revisions and begin the connection register.
+
+## 2026-11-22 — finding 0021: mesh/core revision skew
+
+Examined mesh manifest and lockfile.
+
+Learned: mesh tracks core `main` but locks `ce112258`, not inspected core
+`87f9e8c1`. Prior findings remain scoped to the inspected checkout.
+
+Unknown: actual API differences between those core revisions.
+
+Next: compare the locked and inspected `oag-core` and `oag-crypto` exports.
