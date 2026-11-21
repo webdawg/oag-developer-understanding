@@ -514,3 +514,13 @@ Learned: HTTP(S) inputs get selected normalization and a `url:` prefix; scheme-l
 Unknown: actor declaration and API-key lifecycle.
 
 Next: trace actor and API-key creation.
+
+## 2026-11-22 — finding 0044: actor keys
+
+Examined actor declaration, key creation, revocation, projection, and active-key lookup. Published after `d4d179c`.
+
+Learned: a verified public key stabilizes actor identity; keyless actors are event-scoped. Raw keys are returned once, and authentication excludes revoked hashes.
+
+Unknown: the permission inventory and bootstrap admin-key path.
+
+Next: trace permissions and first-key bootstrap.
