@@ -854,3 +854,13 @@ Learned: these unauthenticated routes disclose this peer's key, known peer addre
 Unknown: whether discovered addresses are later contacted without validation.
 
 Next: trace gossip use of discovered peer addresses.
+
+## 2026-11-22 — finding 0078: discovered sync targets
+
+Examined address storage, sync URL construction, and the response cap.
+
+Learned: addresses from a peer this node already syncs are stored verbatim and later requested. There is no inspected private-network or scheme guard. One response is capped at 4 MiB.
+
+Unknown: default redirect behavior and whether non-HTTP addresses are rejected by the HTTP client.
+
+Next: inspect sync address assumptions in tests and client errors.
