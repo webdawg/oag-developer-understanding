@@ -944,3 +944,13 @@ Learned: ephemeral mode generates a fresh signing identity but opens the same SQ
 Unknown: whether the new peer ID starts a separate origin chain in that database.
 
 Next: connect ephemeral identity to per-peer origin sequencing.
+
+## 2026-11-22 — finding 0087: separate origin chains
+
+Examined local sequence selection and startup identity choice.
+
+Learned: a new peer ID with no origin row starts at sequence 1. The old chain remains in the same database and is not re-signed or erased.
+
+Unknown: whether peers must discover the new key before accepting its first event, and whether the old peer remains advertised.
+
+Next: trace key discovery for a newly generated local identity.
