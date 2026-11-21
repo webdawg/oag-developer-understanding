@@ -524,3 +524,13 @@ Learned: a verified public key stabilizes actor identity; keyless actors are eve
 Unknown: the permission inventory and bootstrap admin-key path.
 
 Next: trace permissions and first-key bootstrap.
+
+## 2026-11-22 — finding 0045: bootstrap admin
+
+Examined the permission enum, admin bypass, and first-run bootstrap.
+
+Learned: the first empty database receives one printed admin key for a keyless service actor. Admin satisfies every specific permission check. Bootstrap does not recur after any actor exists.
+
+Unknown: crawl permission enforcement and private-network guards.
+
+Next: trace crawl authorization and egress checks.
