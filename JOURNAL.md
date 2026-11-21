@@ -306,3 +306,15 @@ implemented in this path.
 Unknown: the threshold that turns corroboration into accepted membership.
 
 Next: trace `MeshTree` corroboration rules.
+
+## 2026-11-22 — finding 0025: caller-selected thresholds
+
+Examined `MeshTree` query methods.
+
+Learned: the tree counts distinct signers and lets every caller choose the
+minimum. Attesting a base-cluster name does not prove that a reporting peer
+belongs to it.
+
+Unknown: whether any production caller selects a default threshold.
+
+Next: trace claim-report corroboration into this tree.
