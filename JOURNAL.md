@@ -201,3 +201,15 @@ raw key in query strings and generated links.
 Unknown: whether logs redact that query parameter.
 
 Next: trace human routing and request logging.
+
+## 2026-11-22 — finding 0016: request span fields
+
+Examined custom span construction and nearby route comments.
+
+Learned: the custom route field uses the URL path, excluding the query string.
+That does not prove every logger or proxy redacts `key`. Several routes are
+explicitly outside bearer authentication.
+
+Unknown: the gateway's alternate trust boundary.
+
+Next: trace gateway query authentication.
