@@ -1104,3 +1104,13 @@ Learned: the address hash is parsed, but the TCP endpoint is not validated by OA
 Unknown: the exact hash grammar and TCP constructor rejection behavior.
 
 Next: trace hash parsing and the TCP client constructor.
+
+## 2026-11-22 — finding 0103: Reticulum hash wrapper
+
+Examined `parse_address_hash`.
+
+Learned: OAG only trims surrounding slashes and delegates. It does not validate the TCP endpoint. The dependency's exact hex grammar was not inspected.
+
+Unknown: accepted hash length and alphabet.
+
+Next: inspect the locked Reticulum address parser if available locally.
