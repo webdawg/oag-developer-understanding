@@ -94,3 +94,14 @@ Unknown: configuration distribution, broadcast recipients, and any later
 constraint.
 
 Next: trace cluster configuration and broadcast behavior.
+
+## 2026-11-22 — finding 0007: cluster broadcast
+
+Examined configuration loading, startup, and declaration broadcast.
+
+Learned: cluster mode is opt-in through `cluster.name`; broadcasts go to every
+known peer address and count attempts rather than acknowledgements.
+
+Unknown: the additional behavior of cluster gossip.
+
+Next: trace the cluster gossip loop.
