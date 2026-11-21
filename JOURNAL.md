@@ -494,3 +494,13 @@ Learned: the signature covers domain-prefixed canonical unsigned JSON. The event
 Unknown: exact serialized field names for assertion payloads.
 
 Next: trace `AssertRelation` serialization.
+
+## 2026-11-22 — finding 0042: assertion serialization
+
+Examined `EventPayload` and `AssertRelationPayload`.
+
+Learned: assertions are tagged `ASSERT_RELATION` and flattened into the signed event. Signed field names differ from the HTTP request after service-layer canonicalization.
+
+Unknown: which raw inputs converge to one canonical identifier and node ID.
+
+Next: trace identifier canonicalization.
