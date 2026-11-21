@@ -804,3 +804,13 @@ Learned: embedded mode is opt-in, but its default listen address is all IPv4 int
 Unknown: whether the public IPFS site page discloses those dial addresses.
 
 Next: trace `/ipfs-site/{cid}`.
+
+## 2026-11-22 — finding 0073: public IPFS dial disclosure
+
+Examined the IPFS site page and startup address selection.
+
+Learned: the unauthenticated page does not fetch content, but it can embed the first embedded dial address or an operator override. CID shape is checked; CID possession and authorization are not.
+
+Unknown: Reticulum ingress authentication.
+
+Next: trace the Reticulum listener.
