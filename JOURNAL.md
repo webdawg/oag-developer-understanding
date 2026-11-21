@@ -152,3 +152,16 @@ active assertions for support and counts disputed assertions separately.
 Unknown: the full corroboration formula and API response fields.
 
 Next: trace corroboration scoring.
+
+## 2026-11-22 — finding 0012: corroboration formula
+
+Examined `get_edge_corroboration` and its identity-assurance test.
+
+Learned: support comes from active assertions, disputes reduce agreement, and
+source grouping limits repeated citations of one group. Retracted and superseded
+rows remain outside the agreement ratio.
+
+Unknown: evidence weights, URI grouping, observation weights, and freshness
+constants.
+
+Next: trace those scoring inputs.
