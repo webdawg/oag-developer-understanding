@@ -178,3 +178,15 @@ Unknown: read authorization boundaries for search, corroboration, and direct
 graph reads.
 
 Next: compare those permission checks.
+
+## 2026-11-22 — finding 0014: read permission boundary
+
+Examined the principal REST read handlers and authentication helper.
+
+Learned: those reads share `graph:read`, including historical assertion data.
+Write operations use separate permissions. Sync must not be lumped into this
+bearer-token boundary.
+
+Unknown: whether human HTML routes bypass the gate.
+
+Next: inspect human read routes.
