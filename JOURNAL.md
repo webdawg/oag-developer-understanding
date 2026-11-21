@@ -914,3 +914,13 @@ Learned: backup copies the whole database, including event payloads and key hash
 Unknown: whether a restore path revalidates signatures and redactions.
 
 Next: search for a restore command.
+
+## 2026-11-22 — finding 0084: restore scope
+
+Searched restore commands and read identity restore and key loading.
+
+Learned: there is no inspected database-snapshot restore command. Identity restore copies a separate 32-byte private key, refuses overwrite without `--force`, and does not verify that the key matches existing events.
+
+Unknown: first-startup identity creation and file permissions.
+
+Next: trace `identity.key` creation.
