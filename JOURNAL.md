@@ -1134,3 +1134,13 @@ Learned: the constructor does not parse host or port. Connect failures are retri
 Unknown: listend IPFS retrieval authentication and content checks.
 
 Next: trace `GET /ipfs/{cid}`.
+
+## 2026-11-22 — finding 0106: listend IPFS fetch
+
+Examined the IPFS HTTP route and `IpfsPublisher::cat`.
+
+Learned: the route is unauthenticated and can cat a caller-chosen CID from the configured node. CID characters and response size are bounded. Audio sniffing gates the response, but the CID multihash is not verified.
+
+Unknown: how the IPFS API address is configured and whether it is cleartext.
+
+Next: trace listend IPFS configuration.
