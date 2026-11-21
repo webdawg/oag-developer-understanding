@@ -554,3 +554,13 @@ Learned: robots and fetch failures stop before graph writes. A successful fetch 
 Unknown: which internal actor and permissions authorize crawler assertions.
 
 Next: trace `crawler_auth`.
+
+## 2026-11-22 — finding 0048: crawler assertion authority
+
+Examined crawler and LLM extractor authentication helpers.
+
+Learned: crawler assertions use a reused local actor named `crawler` with only `graph:assert`. The triggering caller's API key is not the recorded author, and no crawler API key is issued.
+
+Unknown: whether actor name lookup is unique.
+
+Next: trace `find_actor_by_name` and its storage constraint.
