@@ -1004,3 +1004,13 @@ Learned: a self-signed cluster claim is stored without a peer-table row and can 
 Unknown: whether the federation bypass alone lets events be fetched when the verifying key is absent.
 
 Next: trace the fetch loop's key requirement after federation allows the origin.
+
+## 2026-11-22 — finding 0093: federation bypass versus verifying key
+
+Examined the pull-loop key selection and the push handler's stored-key requirement.
+
+Learned: federation admission does not provide a verifying key. Non-contacted origins without a stored key are skipped. A cluster claim alone cannot make their events ingest.
+
+Unknown: whether any other ingress accepts events after only a cluster claim.
+
+Next: search event-ingestion callers for a path that bypasses the stored-key requirement.
