@@ -1284,3 +1284,13 @@ Learned: a missing claim is HTTP 200 with `best: null`. A present claim returns 
 Unknown: how `min_bridge_corroboration` treats zero and a missing query value.
 
 Next: trace the cross-check threshold.
+
+## 2026-11-22 — finding 0121: cross-check threshold
+
+Examined the query default and `is_attested_base_cluster`.
+
+Learned: a missing threshold is 1. Zero accepts any existing base-cluster edge but not an unknown name. The caller selects the threshold on an unauthenticated route.
+
+Unknown: whether a claim report's observed value hash is format-checked.
+
+Next: trace claim-report verification.
