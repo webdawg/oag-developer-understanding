@@ -924,3 +924,13 @@ Learned: there is no inspected database-snapshot restore command. Identity resto
 Unknown: first-startup identity creation and file permissions.
 
 Next: trace `identity.key` creation.
+
+## 2026-11-22 — finding 0085: missing identity file
+
+Examined `load_or_generate`, `save`, and serve startup.
+
+Learned: a missing persistent key file generates a new peer and saves it with mode 0600 on Unix. Startup does not check that the key matches the database. Ephemeral mode ignores the file entirely.
+
+Unknown: whether ephemeral mode still opens and writes the persistent database.
+
+Next: trace ephemeral startup against the database path.
