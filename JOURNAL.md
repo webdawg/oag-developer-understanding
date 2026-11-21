@@ -1124,3 +1124,13 @@ Learned: the hash is 16 bytes. Strings shorter than 32 hex characters error. Lon
 Unknown: TCP client constructor validation.
 
 Next: trace `TcpClient::new` in the locked crate.
+
+## 2026-11-22 — finding 0105: Reticulum TCP client
+
+Inspected locked `TcpClient::new` and its connect loop.
+
+Learned: the constructor does not parse host or port. Connect failures are retried every five seconds with no inspected retry limit.
+
+Unknown: listend IPFS retrieval authentication and content checks.
+
+Next: trace `GET /ipfs/{cid}`.
