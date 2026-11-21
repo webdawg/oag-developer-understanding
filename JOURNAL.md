@@ -1174,3 +1174,13 @@ Learned: only successful CIDs are persisted. Failures live in a 64-entry memory 
 Unknown: collisions eviction order.
 
 Next: trace collisions index replacement and eviction.
+
+## 2026-11-22 — finding 0110: collisions eviction
+
+Examined `insert_units` and `enforce_capacity`.
+
+Learned: eviction is oldest-first. Re-indexing moves an item to the newest end. Zero capacity disables eviction rather than rejecting inserts. Rank is not used.
+
+Unknown: imagination source-failure behavior.
+
+Next: trace imagination node and source failure handling.
