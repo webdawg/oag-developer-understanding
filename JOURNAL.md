@@ -734,3 +734,13 @@ Learned: exact canonical matches return confidence 1.0. Nonexact input returns u
 Unknown: transfer-receipt authentication.
 
 Next: refresh the coverage index, then trace transfer receipts.
+
+## 2026-11-22 — finding 0066: transfer signature boundary
+
+Examined transfer request verification, receipt binding, and the fetch handler.
+
+Learned: transfer authentication is a self-signed peer request plus rate limiting. It does not use bearer tokens or federation admission. Receipts bind one exchange but do not grant graph authorization.
+
+Unknown: relay hop handling and arbitrary CID fetch cost.
+
+Next: trace transfer relay forwarding.
