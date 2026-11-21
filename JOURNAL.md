@@ -236,3 +236,15 @@ results. Failures are dropped rather than retried.
 Unknown: replay detection beyond timestamp skew.
 
 Next: trace gateway nonce and response verification.
+
+## 2026-11-22 — finding 0019: gateway nonce scope
+
+Examined response verification and both request paths.
+
+Learned: callers bind responses to their expected nonce, but the server does not
+persist seen request nonces. Skew and rate limits are not complete replay
+protection.
+
+Unknown: relay hop bounds and authenticated path history.
+
+Next: trace relay loop prevention.
