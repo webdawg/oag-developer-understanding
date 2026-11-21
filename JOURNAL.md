@@ -118,3 +118,14 @@ Unknown: concurrent same-address sync behavior and assertion projection identity
 rules.
 
 Next: trace assertion projection identities and repeated-write behavior.
+
+## 2026-11-22 — finding 0009: assertion identity
+
+Examined node, edge, and assertion identity derivation and insertion.
+
+Learned: nodes and edges are deterministic and idempotent; each assertion is a
+new event-identified row about a reused edge.
+
+Unknown: status transitions and schema constraints for unexpected duplicate IDs.
+
+Next: trace dispute, retraction, and supersession behavior.
