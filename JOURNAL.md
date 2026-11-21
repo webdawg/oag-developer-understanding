@@ -724,3 +724,13 @@ Learned: omitted depth and max-nodes default to 1 and 200, but supplied values a
 Unknown: whether identifier resolution chooses one node or returns candidates.
 
 Next: trace `resolve`.
+
+## 2026-11-22 — finding 0065: identifier resolution
+
+Examined `GraphService::resolve` and its REST adapter.
+
+Learned: exact canonical matches return confidence 1.0. Nonexact input returns up to ten lexical candidates or not found; the service does not guess one candidate. Confidence here is not corroboration.
+
+Unknown: transfer-receipt authentication.
+
+Next: refresh the coverage index, then trace transfer receipts.
