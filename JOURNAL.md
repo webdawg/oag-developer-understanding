@@ -644,3 +644,13 @@ Learned: admin redaction blanks projected title and excerpt and records a tombst
 Unknown: whether actor identity-URI redaction has the same event-log residue.
 
 Next: trace actor identity redaction.
+
+## 2026-11-22 — finding 0057: actor URI redaction residue
+
+Examined actor URI redaction, declaration payload, and history object types.
+
+Learned: redaction blanks the projected URI and preserves a tombstone. The original URI remains in the declaration event payload. The history route does not list actor events, but that is not erasure.
+
+Unknown: what unauthenticated status and metrics routes disclose.
+
+Next: trace status and metrics disclosure.
