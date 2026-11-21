@@ -224,3 +224,15 @@ limits. It does not show bearer or federation authorization.
 Unknown: fanout cost, quorum semantics, and later authorization checks.
 
 Next: trace gateway fanout and rate limiting.
+
+## 2026-11-22 — finding 0018: gateway fanout and limits
+
+Examined the reusable rate limiter, fanout, and quorum aggregation.
+
+Learned: gateway requests are limited per verified peer ID, fanout is bounded by
+configuration, and quorum requires a minimum number of successful agreeing
+results. Failures are dropped rather than retried.
+
+Unknown: replay detection beyond timestamp skew.
+
+Next: trace gateway nonce and response verification.
