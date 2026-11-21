@@ -81,3 +81,16 @@ is not in the comparison function.
 Unknown: where cluster declarations are verified and stored.
 
 Next: trace cluster-claim verification and persistence.
+
+## 2026-11-22 — finding 0006: self-certified clusters
+
+Examined cluster declaration verification and `post_cluster`.
+
+Learned: the signature proves key possession and binds a claimed name, but no
+cluster authority authorizes membership. The stored name can later bypass
+federation.
+
+Unknown: configuration distribution, broadcast recipients, and any later
+constraint.
+
+Next: trace cluster configuration and broadcast behavior.
