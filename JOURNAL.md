@@ -353,3 +353,15 @@ migrations despite the adapter's own queries being reads.
 Unknown: randomness, reproducibility, and routing verification.
 
 Next: trace `SoftwareRandom` and engine routing.
+
+## 2026-11-22 — finding 0029: routing reproducibility
+
+Examined `SoftwareRandom` and `route`.
+
+Learned: the decision is deterministic given pad, ordered neighbors, and seed.
+The default seed is fresh software randomness and is not recorded by the
+inspected adapter, so another peer cannot reproduce it from public state alone.
+
+Unknown: listend admission and content validation.
+
+Next: trace listend content admission.
