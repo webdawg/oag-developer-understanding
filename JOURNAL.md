@@ -376,3 +376,15 @@ signatures. Neither decodes or authorizes audio.
 Unknown: admission order, persistence, and eviction.
 
 Next: trace `AudioStore::accept`.
+
+## 2026-11-22 — finding 0031: listend admission order
+
+Examined `AudioStore::accept` and `persist`.
+
+Learned: signature and size checks precede storage. New directory-backed audio is
+written before in-memory publication, while sidecar and mirror failures have
+different failure semantics. Write completion is not fsync durability.
+
+Unknown: collisions indexing, query, and eviction behavior.
+
+Next: trace collisions.
