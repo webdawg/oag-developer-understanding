@@ -754,3 +754,13 @@ Learned: a verified caller can cause this peer to request its chosen CID from co
 Unknown: response size limits and content-hash verification before bytes are returned.
 
 Next: trace `fetch_and_verify` result checks.
+
+## 2026-11-22 — finding 0068: transfer download order
+
+Examined `fetch_and_verify`.
+
+Learned: the client downloads the full success body before hash and receipt verification. The inspected function has no response-size cap, so a bad receipt does not avoid the download cost.
+
+Unknown: whether the server-side transfer response enforces a size bound.
+
+Next: trace the server transfer response limit.
