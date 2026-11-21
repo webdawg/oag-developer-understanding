@@ -454,3 +454,13 @@ Learned: corroboration is a count of accepted submissions. Difficulty escalates 
 Unknown: claim-report cross-checking and its default threshold.
 
 Next: trace claim-report corroboration.
+
+## 2026-11-22 — finding 0038: claim-report cross-check
+
+Examined claim-report admission, ranking, and bridge cross-checking.
+
+Learned: ranking deduplicates peers and cluster strings. Cross-checking only verifies that a cluster name was attested; it does not prove the reporter's membership.
+
+Unknown: core transaction rollback and crash behavior after a commit error.
+
+Next: trace the SQLite transaction boundary.
