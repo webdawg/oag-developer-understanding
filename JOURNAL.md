@@ -784,3 +784,13 @@ Learned: both accumulate every chunk into a vector. No size cap is visible in ei
 Unknown: client timeout, redirects, and whether the configured IPFS endpoint is trusted.
 
 Next: trace the Kubo HTTP client builder.
+
+## 2026-11-22 — finding 0071: Kubo client defaults
+
+Examined `KuboHttpProvider::new` and `[ipfs]` configuration.
+
+Learned: pinning is disabled by default. Kubo is used only with an operator-configured base URL. The client constructor sets no explicit timeout, redirect, or size policy, and the API key is optional.
+
+Unknown: embedded listener exposure.
+
+Next: trace the embedded IPFS listen default.
