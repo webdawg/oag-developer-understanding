@@ -544,3 +544,13 @@ Learned: `graph:crawl` authorizes triggering egress but cannot override the serv
 Unknown: robots, content-type acceptance, and what fetched content becomes in the graph.
 
 Next: trace post-guard crawl processing.
+
+## 2026-11-22 — finding 0047: crawl assertion pipeline
+
+Examined robots checking, content-type acceptance, and baseline assertion creation.
+
+Learned: robots and fetch failures stop before graph writes. A successful fetch creates a high-confidence page assertion before optional extraction, and pinning failure does not fail the crawl.
+
+Unknown: which internal actor and permissions authorize crawler assertions.
+
+Next: trace `crawler_auth`.
