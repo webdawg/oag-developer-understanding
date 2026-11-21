@@ -904,3 +904,13 @@ Learned: the value is printed or serialized. No inspected caller uses it to bloc
 Unknown: what `oag backup` copies and whether it includes key material.
 
 Next: trace the backup command.
+
+## 2026-11-22 — finding 0083: database backup
+
+Examined `VACUUM INTO` and the CLI backup command.
+
+Learned: backup copies the whole database, including event payloads and key hashes, but not raw API keys unless they were stored inside a payload. Optional pinning uploads that entire snapshot. Filesystem access is the authorization boundary.
+
+Unknown: whether a restore path revalidates signatures and redactions.
+
+Next: search for a restore command.
