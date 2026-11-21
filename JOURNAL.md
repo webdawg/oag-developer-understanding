@@ -1144,3 +1144,13 @@ Learned: the route is unauthenticated and can cat a caller-chosen CID from the c
 Unknown: how the IPFS API address is configured and whether it is cleartext.
 
 Next: trace listend IPFS configuration.
+
+## 2026-11-22 — finding 0107: listend IPFS address
+
+Examined `--ipfs-api` and `split_api`.
+
+Learned: HTTPS is refused. The accepted address is cleartext HTTP or a bare host. The cat request adds no Authorization header. Startup also offers stored audio when the flag is set.
+
+Unknown: the startup mirror budget and failure behavior.
+
+Next: trace `mirror_existing`.
