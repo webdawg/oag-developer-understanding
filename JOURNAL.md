@@ -69,3 +69,15 @@ Unknown: the source and administration of cluster membership, and the concrete
 policy implementation.
 
 Next: trace `same_cluster` and `FederationPolicy`.
+
+## 2026-11-22 — finding 0005: cluster comparison
+
+Examined `FederationPolicy` and `same_cluster`.
+
+Learned: federation is open or allowlist-based, while cluster admission is a
+configured-name comparison against the latest stored claim. Signature checking
+is not in the comparison function.
+
+Unknown: where cluster declarations are verified and stored.
+
+Next: trace cluster-claim verification and persistence.
