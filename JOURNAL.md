@@ -444,3 +444,13 @@ Learned: accepted mesh state is in memory. Broadcast is best-effort, does not re
 Unknown: anonymous-event deduplication and difficulty escalation.
 
 Next: trace anonymous-event recording.
+
+## 2026-11-22 — finding 0037: anonymous corroboration
+
+Examined anonymous-event validation, proof-of-work, and recording.
+
+Learned: corroboration is a count of accepted submissions. Difficulty escalates by four bits per existing report, but repeated content is not inherently deduplicated.
+
+Unknown: claim-report cross-checking and its default threshold.
+
+Next: trace claim-report corroboration.
