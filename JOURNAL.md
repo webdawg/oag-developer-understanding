@@ -564,3 +564,13 @@ Learned: crawler assertions use a reused local actor named `crawler` with only `
 Unknown: whether actor name lookup is unique.
 
 Next: trace `find_actor_by_name` and its storage constraint.
+
+## 2026-11-22 — finding 0049: actor name ambiguity
+
+Examined actor schema, insertion, and name/type lookup.
+
+Learned: name plus type is not unique. The lookup asks SQLite for one optional row without ordering, so duplicate crawler actors can make reuse ambiguous.
+
+Unknown: node alias duplication and read behavior.
+
+Next: trace node alias insertion and lookup.
