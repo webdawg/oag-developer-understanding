@@ -1244,3 +1244,13 @@ Learned: identical edges deduplicate the signer. Distinct group or member string
 Unknown: whether the anonymous-event log has a retention cap.
 
 Next: trace anonymous-event recording and escalation.
+
+## 2026-11-22 — finding 0117: anonymous-event retention
+
+Examined `AnonymousEventLog::record` and the difficulty formula.
+
+Learned: proof of work starts at 16 bits and grows by 4 bits per stored report on the same nonce. A new nonce resets the cost. Nothing caps retained events. Overflow behavior of the `u32` formula was not inspected.
+
+Unknown: whether claim-report storage has a retention cap.
+
+Next: trace claim corroboration storage.
