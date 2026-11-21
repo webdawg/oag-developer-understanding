@@ -141,3 +141,14 @@ during projection. Later status events can overwrite the label.
 Unknown: which read APIs expose non-active assertions.
 
 Next: trace assertion read filtering and visibility.
+
+## 2026-11-22 — finding 0011: assertion visibility
+
+Examined direct assertion reads, node listings, and corroboration filtering.
+
+Learned: status does not hide assertions from direct reads. Corroboration uses
+active assertions for support and counts disputed assertions separately.
+
+Unknown: the full corroboration formula and API response fields.
+
+Next: trace corroboration scoring.
