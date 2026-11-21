@@ -1254,3 +1254,13 @@ Learned: proof of work starts at 16 bits and grows by 4 bits per stored report o
 Unknown: whether claim-report storage has a retention cap.
 
 Next: trace claim corroboration storage.
+
+## 2026-11-22 — finding 0118: claim-report retention
+
+Examined `ClaimCorroboration::add` and its difficulty function.
+
+Learned: a new cluster pays escalating proof of work. A repeat cluster name pays zero bits and is still appended. Query deduplication does not shrink the vector. No claim or cluster cap was found.
+
+Unknown: which duplicates the best-value query hides.
+
+Next: trace `best_corroborated_value`.
