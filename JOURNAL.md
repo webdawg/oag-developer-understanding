@@ -874,3 +874,13 @@ Learned: OAG has no scheme or host allowlist. The default client follows up to 1
 Unknown: whether the original address remains bound to the peer after a redirected hello.
 
 Next: trace address retention after hello.
+
+## 2026-11-22 — finding 0080: redirected identity binding
+
+Examined `sync_with_peer` and `SyncClient::hello`.
+
+Learned: the stored address is the pre-redirect argument. The peer identity comes from the final body. The client API does not return the final URL, so the application cannot detect the host change.
+
+Unknown: whether hello heads can falsify replication status through that path.
+
+Next: trace known-head updates from hello.
