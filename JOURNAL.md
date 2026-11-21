@@ -984,3 +984,13 @@ Learned: a missing peer row is treated as not forked, while a remaining presence
 Unknown: who can write a presence row for an arbitrary peer ID.
 
 Next: trace the presence heartbeat endpoint.
+
+## 2026-11-22 — finding 0091: presence admission
+
+Examined presence verification and `post_presence`.
+
+Learned: any self-signed fresh heartbeat creates a presence row without a peer-table membership. It cannot forge another peer ID. Going-offline address records require stored addresses.
+
+Unknown: whether a cluster claim can likewise be stored before the peer row and still bypass federation.
+
+Next: confirm cluster-claim storage prerequisites.
