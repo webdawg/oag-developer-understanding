@@ -283,3 +283,14 @@ Unknown: which shared types mesh actually imports and whether any runtime path
 connects the repositories.
 
 Next: inspect mesh exports and imports.
+
+## 2026-11-22 — finding 0023: mesh shared primitives
+
+Searched mesh for core imports and inspected bridge and corroboration calls.
+
+Learned: mesh reuses canonical JSON and signing primitives only. It does not
+inspectably import core graph, event, storage, or sync services.
+
+Unknown: bridge declaration lifecycle and failure behavior.
+
+Next: trace one bridge declaration end to end.
