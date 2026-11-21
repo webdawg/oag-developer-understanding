@@ -1054,3 +1054,13 @@ Learned: the prefix is written once and never parsed. HTTP gossip can later trea
 Unknown: whether malformed addresses are retried forever and how they mix with bootstrap addresses.
 
 Next: trace gossip address enumeration and deduplication.
+
+## 2026-11-22 — finding 0098: gossip retries
+
+Examined ordinary gossip address assembly and `sync_round`.
+
+Learned: every stored address is retried on every tick. Failures do not remove it. Dedup is exact string equality before slash trimming.
+
+Unknown: whether any other loop caches addresses across ticks.
+
+Next: confirm gossip has no long-lived address cache beyond the current tick.
