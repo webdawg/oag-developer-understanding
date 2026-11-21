@@ -464,3 +464,23 @@ Learned: ranking deduplicates peers and cluster strings. Cross-checking only ver
 Unknown: core transaction rollback and crash behavior after a commit error.
 
 Next: trace the SQLite transaction boundary.
+
+## 2026-11-22 — finding 0039: SQLite durability boundary
+
+Examined pool options and transaction usage.
+
+Learned: WAL, foreign keys, busy timeout, and a bounded pool are configured. Event functions use sqlx transactions, but no explicit immediate transaction, synchronous setting, or crash test proves power-loss atomicity.
+
+Unknown: schema constraints protecting event sequence and origin head.
+
+Next: inspect the events schema and origin update.
+
+## 2026-11-22 — finding 0040: event uniqueness
+
+Examined the initial schema and event insertion helpers.
+
+Learned: event ID and origin sequence are unique, but `INSERT OR IGNORE` turns conflicts into a false result. Origin advancement overwrites both sequence fields and does not prove contiguity by itself. Predecessor links are not foreign-keyed.
+
+Unknown: canonical event identity and signature-domain binding.
+
+Next: trace event-ID derivation.
