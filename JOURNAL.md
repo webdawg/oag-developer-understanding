@@ -129,3 +129,15 @@ new event-identified row about a reused edge.
 Unknown: status transitions and schema constraints for unexpected duplicate IDs.
 
 Next: trace dispute, retraction, and supersession behavior.
+
+## 2026-11-22 — finding 0010: status transitions
+
+Examined dispute, retraction, and supersession service guards and projectors.
+
+Learned: all three preserve history and update a status label. Ownership is
+enforced for retraction before commit, while supersession existence is enforced
+during projection. Later status events can overwrite the label.
+
+Unknown: which read APIs expose non-active assertions.
+
+Next: trace assertion read filtering and visibility.
