@@ -664,3 +664,13 @@ Learned: neither route uses bearer authentication. Status discloses the local pe
 Unknown: whether MCP uses the same authorization gates.
 
 Next: trace MCP authentication and tool permissions.
+
+## 2026-11-22 — finding 0059: MCP authorization
+
+Examined MCP bearer extraction and representative read, assert, crawl, and redaction tools.
+
+Learned: MCP uses the same key lookup and service permission checks as REST. It is not an authorization bypass, though crawler assertions still use the internal crawler actor.
+
+Unknown: listend retrieval authentication and content-addressed serving.
+
+Next: trace listend serving.
