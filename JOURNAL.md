@@ -694,3 +694,13 @@ Learned: Hamming ranking only reorders candidates already found by prefix bucket
 Unknown: whether default unigram SimHash ignores token order.
 
 Next: trace weighted SimHash accumulation.
+
+## 2026-11-22 — finding 0062: SimHash order
+
+Examined `simhash_weighted` and `simhash_with_domain`.
+
+Learned: per-token bit votes are summed. The same tokens and weights produce the same hash in any order. Order matters only when a tokenizer emits order-dependent units. Equal hashes do not prove equal meaning.
+
+Unknown: subgraph traversal limits and cycle handling.
+
+Next: trace subgraph retrieval.
