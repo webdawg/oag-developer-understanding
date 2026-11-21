@@ -1204,3 +1204,13 @@ Learned: only an exact 32-byte device read is returned. Missing, unreadable, and
 Unknown: whether mesh senders can observe a dropped in-memory message.
 
 Next: trace mesh transport delivery acknowledgements.
+
+## 2026-11-22 — finding 0113: mesh drop visibility
+
+Examined broadcast, direct push, and receive handlers.
+
+Learned: broadcast returns unit and only logs per-peer failures. Direct push returns an address and status or request error. A 204 is local memory acceptance. Restart loss and cross-check drops are not reported to the original sender.
+
+Unknown: whether a receiver relays an accepted message.
+
+Next: trace receive handlers for rebroadcast.
