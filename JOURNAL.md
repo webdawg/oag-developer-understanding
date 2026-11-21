@@ -1364,3 +1364,13 @@ Learned: the conflicting signed JSON stays in `peer_forks`. Range fetch serves o
 Unknown: whether a projection rebuild preserves `peer_forks`.
 
 Next: trace rebuild table handling.
+
+## 2026-11-22 — finding 0129: rebuild and forks
+
+Examined the projection wipe list and replay loop.
+
+Learned: `peer_forks` is excluded from the wipe and is not replayed into `events`. Fork evidence survives rebuild but does not become a projected assertion.
+
+Unknown: whether a revoked actor key rejects a remote event at ingest.
+
+Next: trace actor-key revocation against ingest.
