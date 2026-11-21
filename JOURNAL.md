@@ -844,3 +844,13 @@ Learned: the limit is 600 requests per process per minute, with no per-caller id
 Unknown: the exact fields returned by HTTP hello and peer-list routes.
 
 Next: trace those sync disclosure routes.
+
+## 2026-11-22 — finding 0077: sync discovery disclosure
+
+Examined hello, heads, peers, and replication-status.
+
+Learned: these unauthenticated routes disclose this peer's key, known peer addresses, and lagging peer IDs with reported sequences. The global rate limit does not redact them.
+
+Unknown: whether discovered addresses are later contacted without validation.
+
+Next: trace gossip use of discovered peer addresses.
