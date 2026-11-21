@@ -44,3 +44,15 @@ Unknown: which caller supplies the trusted key, how sync requests ranges, and
 whether concurrent ingestion has a lock.
 
 Next: trace the caller and sync-range behavior.
+
+## 2026-11-22 — finding 0003: sync key selection
+
+Examined the pull loop in `oag-sync` and the push handler in its server.
+
+Learned: pull selects a verifying key before fetching a contiguous range and
+stops one origin after a fork or ingestion error. Push looks up the same kind of
+stored key but continues after individual skipped events.
+
+Unknown: peer discovery, federation admission, and the Reticulum caller.
+
+Next: trace discovery and federation eligibility.
