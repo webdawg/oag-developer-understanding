@@ -1184,3 +1184,13 @@ Learned: eviction is oldest-first. Re-indexing moves an item to the newest end. 
 Unknown: imagination source-failure behavior.
 
 Next: trace imagination node and source failure handling.
+
+## 2026-11-22 — finding 0111: imagination failure handling
+
+Examined randomness sources and `observe_hop`.
+
+Learned: sources always return 32 bytes. Hardware and missing real data fall back to software randomness. A failed hop multiplies one weight by `exp(-0.1)` and does not abort the engine.
+
+Unknown: whether a real byte-device source reports short reads.
+
+Next: trace `DeviceRandom`.
