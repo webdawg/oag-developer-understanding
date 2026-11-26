@@ -2330,3 +2330,15 @@ and failures collapse into io::Error or None. Proxy CONNECT read is a single
 1024-byte buffer with no shown timeout. No network carrier was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0195: separated aberration experiment
+
+All six source branches fetched successfully; heads unchanged. Examined the
+collisions aberration module, example, tests, call sites, and scoped diff.
+
+Learned: pure physics experiment computes v²/r drift, CMB speed, classical
+aberration, and light-speed scenario. Tests assert measured ranges. It is
+exported and example-runnable but has no production collision-index caller;
+unchanged from dfc8ca95. No example or test was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
