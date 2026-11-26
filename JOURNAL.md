@@ -1419,3 +1419,21 @@ Unknown: whether a late status event can overwrite an assertion status already
 set by an event with a later `created_at`.
 
 Next: trace `oag_storage::repo::assertions::set_status`.
+
+## 2026-11-22 — finding 0133: overwritable assertion status
+
+Examined the core status enum, `assertions::set_status`, the three status
+projectors, and local API entry checks.
+
+Learned: `assertions.status` is a derived cache overwritten by the last
+projected dispute, retraction, or supersede event. `set_status` has no current
+status or time predicate. History tables retain the individual events, but the
+column keeps only the last write in insertion order. Compared with 87f9e8c:
+the core enum, storage update, projector, and status API methods are unchanged;
+assert.rs gained only pinned-CID and verification-count code.
+
+Unknown: whether history/UI surfaces show both status events and their order or
+only the final cached status.
+
+Next: trace `oag_graph::history::GraphService::get_history` and
+`oag-api/src/human.rs::HistoryEntryView`.
