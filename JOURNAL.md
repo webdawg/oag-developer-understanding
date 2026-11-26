@@ -2261,3 +2261,18 @@ timeout, frame cap, protocol, and audio rule as TCP. No socket was run.
 Unknown: how main starts carriers and drains active sessions on shutdown.
 
 Next: trace `oag_listend::main` startup and shutdown ordering.
+
+## 2026-11-22 — finding 0190: listend process lifecycle
+
+All six source branches fetched successfully; heads unchanged. Examined main
+argument handling, early signals, store opening, carrier binds, startup seed,
+post-bind mirror, and two-phase shutdown.
+
+Learned: signals are registered before observable startup. --check exits before
+binds/mirror. Carriers all bind before spawns; mirror starts after serving. Stop
+signals all handles, waits 5s per run task, then polls active counters for 2s.
+No daemon or signal was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+Next: re-fetch, then trace `oag_listend::reticulum::ReticulumCarrier::bind` and `run`.
