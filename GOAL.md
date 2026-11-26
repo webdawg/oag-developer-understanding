@@ -1,3 +1,7 @@
+# Superseded
+
+The procedure is [ENGINE.md](ENGINE.md). Paste that file. Do not run `/loop` from this file.
+
 # Goal — keep explaining OAG, forever, at latest HEAD
 
 Reverse-build evidence-backed explanations of the Open Agent Graph family so a
