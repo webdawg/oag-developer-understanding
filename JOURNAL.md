@@ -2160,3 +2160,17 @@ malformed frames close the stream. No listener or test was run.
 Unknown: re-fetch next invocation and choose the largest remaining gap.
 
 Next: re-fetch, then trace `oag_listend::protocol::read_frame` and `decode_request` length rules.
+
+## 2026-11-22 — finding 0183: length-first frame decoding
+
+Examined native frame reading, buffered frame validation, checked Reader,
+request opcodes, and hash normalization. Unchanged from aad2d9b2.
+
+Learned: declared length is rejected before body allocation; reads are bounded.
+decode_request consumes opcode-specific fields, treats empty declared type as
+None, and normalizes 64-hex fetch hashes to lowercase. BadHash is the one decode
+error answered while keeping the session open. No socket was used.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+Next: re-fetch, then trace `oag_listend::udp::UdpCarrier::run` frame-size and peer handling.
