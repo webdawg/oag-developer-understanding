@@ -1522,3 +1522,18 @@ Changed since 87f9e8c: pinning moved from last-address-wins to first-address;
 Unknown: which transitional IPv6 ranges the explicit predicate does not name.
 
 Next: trace `oag_crawler::ssrf::is_blocked_v6`.
+
+## 2026-11-22 — finding 0139: IPv6 blocklist coverage
+
+Examined `is_blocked_ip`/`is_blocked_v6`, its caller, and its printed tests.
+Compared `ssrf.rs` with 87f9e8c: unchanged.
+
+Learned: IPv6 blocking is a named predicate set: mapped, loopback, unspecified,
+multicast, ULA, link-local. Documentation, 6to4, Teredo, discard-only, and
+IPv4-compatible forms have no explicit branch. Reachability of those forms is
+Unknown; no request was made. Finding 0046's caveat still holds.
+
+Unknown: what `safe_fetch` accepts and stores after the network guard.
+
+Next: trace `oag_crawler::fetch::safe_fetch` content-type normalization, body
+cap, and BLAKE3 hash destination.
