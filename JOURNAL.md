@@ -2342,3 +2342,14 @@ exported and example-runnable but has no production collision-index caller;
 unchanged from dfc8ca95. No example or test was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0196: unfiltered node sources
+
+All six source branches fetched successfully; heads unchanged. Examined the
+node sources helper, REST/MCP surfaces, route registration, and storage queries.
+
+Learned: find_sources returns all evidence on all assertions whose edges touch
+the node, with no status filter, dedup, cap, or ordering. REST was added at the
+newer commit with the same response shape as MCP. No endpoint was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
