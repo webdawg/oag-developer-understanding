@@ -2232,3 +2232,18 @@ the CID and X-Content-Hash is BLAKE3 of returned bytes. No IPFS node was run.
 Unknown: how CID text and operator API addresses are parsed into requests.
 
 Next: trace `oag_listend::ipfs::validate_cid` and `split_api`.
+
+## 2026-11-22 — finding 0188: IPFS input syntax gates
+
+Examined validate_cid, split_api, parse_add_response, call sites, and diff.
+Rules unchanged from aad2d9b2.
+
+Learned: CIDs accept only 128 bytes of ASCII alphanumeric/-/_ before request
+lines or headers. HTTPS API addresses are refused, optional http:// stripped,
+host taken before the first slash, and path forced to /api/v0/add. Add replies
+are scanned for Hash then CID-checked; no multihash verification. No node was
+run.
+
+Unknown: what Unix-socket admission and path handling add.
+
+Next: re-fetch, then trace `oag_listend::unix::UnixCarrier`.
