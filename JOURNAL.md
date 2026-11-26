@@ -2318,3 +2318,15 @@ duplicates collapse in gather's map. No carrier was run.
 Unknown: how the proxied HTTP and IPFS publisher seams fail.
 
 Next: trace `oag_imagination::socket::ProxiedTransport` and `HttpIpfsPublisher`.
+
+## 2026-11-22 — finding 0194: transport seams reinterpret addresses
+
+All six source branches fetched successfully; heads unchanged. Examined TCP,
+CONNECT proxy, IPFS publish/read, and HTTP transport seams.
+
+Learned: address means host:port, CONNECT target, CID, or base URL depending on
+the carrier; IPFS write ignores it. Success requires coarse status/JSON checks,
+and failures collapse into io::Error or None. Proxy CONNECT read is a single
+1024-byte buffer with no shown timeout. No network carrier was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
