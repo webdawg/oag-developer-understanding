@@ -1685,3 +1685,19 @@ figures were not reproduced.
 Unknown: whether caller-chosen hash domains are used by any index.
 
 Next: trace `oag_collisions::simhash_with_domain` and its call sites.
+
+## 2026-11-22 — finding 0151: domain helper is not an index feature
+
+Examined `simhash_with_domain`, its call sites, the index's single-hash state,
+and EXP-026's recorded result. Library and EXPERIMENTS.md unchanged from
+dfc8ca95.
+
+Learned: domain-separated hashing is a public primitive used by examples only.
+`CollisionIndex` stores one hash via the empty-domain wrapper. Dual-hash recall
+is a recorded experiment that concluded against doubling index memory, not an
+implemented feature. The example was not run.
+
+Unknown: what in oag-listend changed or remains undocumented at b87dcac9.
+
+Next: compare listend b87dcac9 with aad2d9b2 and document one admission or
+persistence mechanism.
