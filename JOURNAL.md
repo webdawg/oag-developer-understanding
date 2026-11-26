@@ -1862,3 +1862,18 @@ the seven-store snapshot. No sync was run.
 Unknown: what membership attestations add and how they expire.
 
 Next: trace `oag_mesh::membership::MembershipRegistry`.
+
+## 2026-11-22 — finding 0163: membership attestations without expiry
+
+Examined the new membership module, fully-cross-checked route, and broadcast
+helper. Compared with 9f5d89e9: new module and routes.
+
+Learned: distinct attesters per (cluster, subject) are stored in a HashSet. New
+attesters need 16+4*n proof-of-work bits; repeats are free and do not bump
+sequence. Verification checks signature/key/skew/self only, not attester
+standing. Snapshots union sets without re-verifying; no expiry or revocation
+path appears. No request was made.
+
+Unknown: how responder acknowledgments are admitted and exposed.
+
+Next: trace `oag_mesh::responder::ResponderAcknowledgmentLog`.
