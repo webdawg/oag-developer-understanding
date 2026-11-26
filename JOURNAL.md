@@ -2203,3 +2203,18 @@ bodies are drained to avoid TCP reset. No listener was run.
 Unknown: how read_request distinguishes 413 from malformed heads.
 
 Next: trace `oag_listend::http::read_request`.
+
+## 2026-11-22 — finding 0186: HTTP framing rules
+
+Examined read_request head/body parsing, boundary cap, Content-Length and
+Transfer-Encoding rules, Expect handling, and ERROR mapping.
+
+Learned: head cap is checked exactly at the blank-line boundary; oversized
+bodies become 413, while malformed heads, multiple Content-Length headers, and
+any Transfer-Encoding become 400 with reasons. 100-continue is sent only after
+framing passes. Short bodies are drained after the response. No HTTP client was
+run.
+
+Unknown: how the IPFS CID fetch route admits and verifies remote bytes.
+
+Next: re-fetch, then trace `oag_listend::ipfs` and `GET /ipfs/{cid}`.
