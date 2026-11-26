@@ -1569,3 +1569,17 @@ facts and unresolved aliases are skipped, not fatal. Tests were read only.
 Unknown: which HTML tags and attributes html_meta extracts.
 
 Next: trace `oag_crawler::extract::html_meta::extract`.
+
+## 2026-11-22 — finding 0142: HTML meta aliases
+
+Examined `html_meta::extract` and its orchestration. Compared 87f9e8c:
+extractor unchanged.
+
+Learned: only the first `<title>` and first `og:title` are read, trimmed, and
+locally deduplicated as `Name` aliases for the page URL. No facts, no meta
+description, no cross-extractor deduplication. Failed alias declarations only
+reduce the summary count. Tests were read only.
+
+Unknown: what Markdown extraction turns into candidate facts and aliases.
+
+Next: trace `oag_crawler::extract::markdown::extract`.
