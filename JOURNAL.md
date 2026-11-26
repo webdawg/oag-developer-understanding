@@ -2022,3 +2022,17 @@ run.
 Unknown: how REST/MCP semantic search diverges from cursor pagination.
 
 Next: trace `graph_search` in oag-mcp and the REST search handler.
+
+## 2026-11-22 — finding 0174: unpaged semantic search
+
+Examined REST/MCP semantic branches, semantic_search, provider errors, and
+embedding rebuild. Compared with 87f9e8c1.
+
+Learned: semantic=true bypasses search_page; response has no next_cursor and
+offset/cursor are ignored. Ranking is cosine over all stored embeddings with a
+1000 cap; disabled provider maps to 400, other provider errors to 502. Search
+suppression is still not applied. No provider or request was run.
+
+Unknown: exact cosine formula and invalid-vector handling.
+
+Next: trace `oag_embeddings::rank` and `oag_embeddings::similarity`.
