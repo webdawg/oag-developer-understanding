@@ -1804,3 +1804,17 @@ ID, and link quality are reconstructed fresh. No crash or save was executed.
 Unknown: which limiter governs which new mesh route.
 
 Next: trace `oag_mesh::rate_limit::RateLimiter` and `TokenBucket`.
+
+## 2026-11-22 — finding 0159: mesh route limiters
+
+Examined the new rate_limit module, constants, router, and four call sites.
+
+Learned: route-search (8 tokens, 2/s) and onion (16 tokens, 0.5/s) are node-wide
+buckets for unauthenticated amplification endpoints. Membership attestations
+(30/60s) and responder acks (60/60s) are per verified peer ID in fixed windows.
+Limits are in-memory, bounded to 10,000 live fixed-window keys, and reset on
+restart. No request or test was run.
+
+Unknown: how responder subscriptions and inbox store and deliver events.
+
+Next: trace `ResponderInbox` and `ResponderSubscriptionRegistry`.
