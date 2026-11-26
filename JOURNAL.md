@@ -1966,3 +1966,17 @@ Unknown: what the latency histograms sample and clamp.
 
 Next: trace `oag_graph::latency::LatencyHistogram` and
 `oag_api::latency::api_latency_middleware`.
+
+## 2026-11-22 — finding 0170: latency histogram boundaries
+
+Examined the shared histogram implementation, API middleware, search observation
+points, metrics snapshot, and renderer. These are new since 87f9e8c1.
+
+Learned: fixed cumulative buckets and microsecond integer sums are shared. API
+latency records every middleware response including errors; search latency
+records only successful searches after pool acquisition, so failed searches and
+pool waits are missing. Both reset on restart. No endpoint or search was run.
+
+Unknown: what events_pending_chain counts and whether forks alter it.
+
+Next: trace `oag_storage::repo::stats::events_pending_chain`.
