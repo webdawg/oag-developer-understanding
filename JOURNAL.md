@@ -1671,3 +1671,17 @@ not reproduced here. Default remains unigram words with bigrams off.
 Unknown: how a second hash domain interacts with the prefix index.
 
 Next: trace `oag_collisions::simhash_with_domain` and the multi-hash index path.
+
+## 2026-11-22 — finding 0150: collisions multi-probe
+
+Examined `collide_multi_probe`, its text wrapper, and the ordinary prefix
+ladder. Library unchanged from dfc8ca95; only scripts changed upstream.
+
+Learned: multi-probe adds flipped 8-bit prefix buckets, clamps probe bits and
+flips, unions candidates, and sorts by Hamming without reapplying the 8-bit
+threshold. It is read-only; recall comes with false positives. Cited experiment
+figures were not reproduced.
+
+Unknown: whether caller-chosen hash domains are used by any index.
+
+Next: trace `oag_collisions::simhash_with_domain` and its call sites.
