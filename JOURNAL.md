@@ -1507,3 +1507,18 @@ reuses from the crawler.
 
 Next: trace `oag_crawler::fetch::resolve_and_validate`,
 `build_pinned_client`, and `prefer_ipv4`.
+
+## 2026-11-22 — finding 0138: DNS validation and single-address pinning
+
+Examined crawler resolve/validate/pin helpers, the SSRF predicate, and the
+gateway HTTP upstream path. Compared 87f9e8c with fb54e43 for this mechanism.
+
+Learned: every resolved address is validated, then `prefer_ipv4` reduces the
+set and `build_pinned_client` pins only the first address, with no fallback.
+Gateway reuses the crawler guard without the crawler content-type allowlist.
+Changed since 87f9e8c: pinning moved from last-address-wins to first-address;
+`prefer_ipv4` was added and called by both paths. Tests were inspected only.
+
+Unknown: which transitional IPv6 ranges the explicit predicate does not name.
+
+Next: trace `oag_crawler::ssrf::is_blocked_v6`.
