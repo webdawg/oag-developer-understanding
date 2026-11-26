@@ -1641,3 +1641,18 @@ Unknown: when the LLM fallback calls an external model and how it fails.
 
 Next: trace `oag_crawler::llm_extract::LlmExtractor::extract` and its
 OpenAI-compatible implementation.
+
+## 2026-11-22 — finding 0147: optional bounded LLM extraction
+
+Examined provider selection, the extractor trait, disabled default,
+OpenAI-compatible request/parse path, and crawler orchestration.
+
+Learned: LLM extraction defaults off; enabled mode posts once per HTML page
+with 10s connect and 120s total timeouts, over an 8000-character text cap.
+Malformed model JSON yields no candidates; confidence is clamped; individual
+assertion failures only count as skipped. Compared with 87f9e8c: timeouts are
+the change; prompt and parsing are unchanged. Tests were read only.
+
+Unknown: which candidate strings graph assert validation accepts or rejects.
+
+Next: trace `oag_graph::assert::GraphService::assert` and `AssertInput::validate`.
