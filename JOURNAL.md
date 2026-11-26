@@ -1760,3 +1760,18 @@ Unknown: how the Reticulum carrier differs from the TCP socket carrier.
 
 Next: inspect `oag-imagination-reticulum` at 73fadb3c for admission or routing
 differences.
+
+## 2026-11-22 — finding 0156: imagination Reticulum carrier
+
+Examined the separate imagination-reticulum crate at 73fadb3c. Imagination
+library unchanged from 7b7dcb8e.
+
+Learned: seed-derived identity, 1400-byte chunks over a 4-byte length-prefixed
+JSON frame, 8 MiB cap, 30s announce/15s link/15s reply waits. Send errors become
+None then io TimedOut. Server announces every 5s, answers only Request messages,
+and discards engine.handle's result. No shared framing code with core; wire
+compatibility is documented intent. No target test was run.
+
+Unknown: which data-roads requirement is still only a proposal.
+
+Next: inspect data-roads b5cd2f4e and record the largest unresolved requirement.
