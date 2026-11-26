@@ -1950,3 +1950,19 @@ connection register. No service was run.
 Unknown: re-fetch on the next invocation and choose the largest remaining gap.
 
 Next: re-fetch all branches, then trace `oag_graph::service::GraphService::record_verification` and its counters.
+
+## 2026-11-22 — finding 0169: verification counter boundary
+
+All six source branches fetched successfully; heads remain as listed in
+specs/revisions.md. Examined the new verification counters, service method,
+metrics snapshot, API rendering, and REST/MCP parsing order.
+
+Learned: jobs/failures count calls that reach GraphService::verify_assertion,
+including missing graph:verify and failed commits. Bad IDs/results/timestamps
+and bad API keys are rejected before the service and are not counted, though
+the metric help text names them. Counters are process-lifetime only.
+
+Unknown: what the latency histograms sample and clamp.
+
+Next: trace `oag_graph::latency::LatencyHistogram` and
+`oag_api::latency::api_latency_middleware`.
