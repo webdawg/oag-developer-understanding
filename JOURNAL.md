@@ -1744,3 +1744,19 @@ rewritten. No daemon or IPFS node was run.
 Unknown: what changed in the imagination repository at 73fadb3c.
 
 Next: compare imagination 73fadb3c with 7b7dcb8e and document one mechanism.
+
+## 2026-11-22 — finding 0155: imagination URL resolver
+
+Compared imagination 7b7dcb8e with 73fadb3c: library unchanged, scripts only.
+Examined target inference, composite resolution, UrlResolver, example wiring,
+and transport frame bound.
+
+Learned: a plain reqwest GET answers http(s) targets with status and full text.
+No explicit SSRF guard, timeout, redirect policy, content-type check, or fetch
+body cap appears in the resolver. Imagination does not depend on the crawler
+guard. No request was made.
+
+Unknown: how the Reticulum carrier differs from the TCP socket carrier.
+
+Next: inspect `oag-imagination-reticulum` at 73fadb3c for admission or routing
+differences.
