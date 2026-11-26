@@ -1994,3 +1994,17 @@ or ingest was run.
 Unknown: what pin discovery records and what "holds" means.
 
 Next: trace `oag_graph::pins::GraphService` pin helpers.
+
+## 2026-11-22 — finding 0172: pin discovery record
+
+Examined pin service helpers, storage queries, migration backfill, REST route,
+and tests. New since 87f9e8c1.
+
+Learned: pinned_cids is one durable row per CID with timestamp and descriptive
+source. Re-pins refresh time and keep first source. holds is a row lookup, not a
+live IPFS check; list is newest-first and clamped to 1000. Migration backfills
+evidence metadata with INSERT OR IGNORE. No route or migration was run.
+
+Unknown: what evidence redaction removes and what rebuild reapplies.
+
+Next: trace `oag_graph::redaction::GraphService::redact_evidence`.
