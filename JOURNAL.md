@@ -1611,3 +1611,18 @@ confidence is 0.5. Tests were read only.
 Unknown: how ARD responses choose their subjects.
 
 Next: trace `oag_crawler::extract::ard::parse`.
+
+## 2026-11-22 — finding 0145: per-resource ARD extraction
+
+Examined the ARD parser, side fetch, and assertion loop. Compared 87f9e8c:
+parser unchanged; crawler adds pin CID only.
+
+Learned: each `resources[]` entry is its own subject using the raw `url` or
+site-origin fallback. `mcp_server`/`mcp-server` selects that node type, all
+others become `agent`. Name aliases, operator, and capabilities are per
+resource; all facts share the ARD response evidence at confidence 0.7. Tests
+were read only.
+
+Unknown: how the A2A agent-card parser chooses subjects and predicates.
+
+Next: trace `oag_crawler::extract::a2a::parse`.
