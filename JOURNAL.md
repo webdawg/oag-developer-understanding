@@ -1701,3 +1701,17 @@ Unknown: what in oag-listend changed or remains undocumented at b87dcac9.
 
 Next: compare listend b87dcac9 with aad2d9b2 and document one admission or
 persistence mechanism.
+
+## 2026-11-22 — finding 0152: listend dual bound and storage timeout
+
+Compared listend aad2d9b2 with b87dcac9 and examined the current accept path.
+
+Learned: accept now checks audio against the frame-derived servable bound and
+audio-plus-declared-media-type footprint against the store bound. Media types
+are trimmed and capped at 4096 bytes. Duplicate stats, writes, and unlinks use
+a 60-second timeout. Finding 0030's old single-bound description is corrected
+by this finding, not rewritten.
+
+Unknown: what the new load deadline and read-only check mode report.
+
+Next: trace `with_directory`, `check_directory`, and `load_dir_impl`.
