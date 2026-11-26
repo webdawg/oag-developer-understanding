@@ -1474,3 +1474,19 @@ Unknown: which clock drives freshness and what a future timestamp can alter.
 
 Next: trace `oag_graph::service::chrono_now` and
 `oag_graph::corroboration::freshness_from_age`.
+
+## 2026-11-22 — finding 0136: gateway time is not graph time
+
+Examined `GraphService::now`, freshness, gateway request clock, NTP resolver,
+quorum, UDP front-end, and upstream wire exchange.
+
+Learned: graph clocks and freshness use local `SystemTime`. Gateway NTP answers
+are verified for outside clients but are not consumed by `oag-graph`; exact
+grep for `ntp` in the graph crate found no matches. A failed NTP resolution
+sends no UDP reply rather than falling back to the local clock. Compared with
+87f9e8c: NTP code and cited graph clock lines are unchanged; gateway changes
+are HTTP-only IPv4 pinning moved to the crawler.
+
+Unknown: what a cached NTP answer returns during its TTL and after expiry.
+
+Next: trace `oag_api::gateway::compute_cache_ttl` and `adjust_for_elapsed`.

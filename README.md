@@ -9,7 +9,7 @@ License: [AGPL-3.0-or-later](LICENSE).
 ## Start here
 
 1. [JOURNAL.md](JOURNAL.md) — what has been investigated and what comes next.
-2. [findings/](findings/) — mechanism findings `0001` through `0135`.
+2. [findings/](findings/) — mechanism findings `0001` through `0136`.
 3. [flows/connection-register.md](flows/connection-register.md) — established and proposed cross-repository connections.
 4. [diagrams/0001-local-assertion-commit.md](diagrams/0001-local-assertion-commit.md) — local assertion sequence.
 
@@ -47,7 +47,8 @@ integration.
   views, observation display versus scoring, visibility, and corroboration
   scoring.
 - REST and MCP authorization, human-UI query keys, unauthenticated status and
-  metrics, and gateway signature, fanout, nonce, and relay bounds.
+  metrics, gateway signature, fanout, nonce, relay bounds, and NTP answers kept
+  separate from graph clocks.
 - Mesh signing reuse, self-certified bridge declarations, and caller-selected
   corroboration thresholds.
 - Imagination's one-shot storage read and seed-dependent routing.
