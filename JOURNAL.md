@@ -1537,3 +1537,20 @@ Unknown: what `safe_fetch` accepts and stores after the network guard.
 
 Next: trace `oag_crawler::fetch::safe_fetch` content-type normalization, body
 cap, and BLAKE3 hash destination.
+
+## 2026-11-22 — finding 0140: crawler body acceptance and hash
+
+Examined `safe_fetch` after the network guard, the crawler's evidence handoff,
+and corroboration's content grouping.
+
+Learned: six normalized content types are accepted. Declared and streamed size
+caps are enforced before a page is returned. BLAKE3 is computed over the exact
+accepted bytes and stored as evidence content_hash, which corroboration groups
+by `content:<hash>`. Gateway HTTP upstreams skip the content-type allowlist.
+Compared with 87f9e8c: these acceptance and hash lines are unchanged; nearby
+changes are address pinning and best-effort pin recording.
+
+Unknown: which JSON-LD fields become assertions and what evidence they carry.
+
+Next: trace `oag_crawler::extract::json_ld::extract_from_html` and
+`extract_from_json`.
