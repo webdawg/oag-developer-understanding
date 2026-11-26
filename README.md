@@ -9,7 +9,7 @@ License: [AGPL-3.0-or-later](LICENSE).
 ## Start here
 
 1. [JOURNAL.md](JOURNAL.md) — what has been investigated and what comes next.
-2. [findings/](findings/) — mechanism findings `0001` through `0130`.
+2. [findings/](findings/) — mechanism findings `0001` through `0131`.
 3. [flows/connection-register.md](flows/connection-register.md) — established and proposed cross-repository connections.
 4. [diagrams/0001-local-assertion-commit.md](diagrams/0001-local-assertion-commit.md) — local assertion sequence.
 
@@ -41,8 +41,8 @@ integration.
 
 - Core local assertion commit, remote ingestion, sync, discovery, federation,
   cluster admission, event identity, schema constraints, actor keys, crawl,
-  search, embeddings, authority, rebuild, redaction, subgraph limits, and
-  resolution.
+  search, embeddings, authority, rebuild and its insertion-order replay,
+  redaction, subgraph limits, and resolution.
 - Assertion identity, status transitions, visibility, and corroboration scoring.
 - REST and MCP authorization, human-UI query keys, unauthenticated status and
   metrics, and gateway signature, fanout, nonce, and relay bounds.

@@ -1384,3 +1384,20 @@ Learned: remote ingest does not consult actor-key revocation. Local bearer authe
 Unknown: whether projection uses event time or arrival order when a revocation and an assertion race.
 
 Next: trace projection ordering against `created_at`.
+
+## 2026-11-22 — finding 0131: projection ordering
+
+All six source branches fetched successfully; heads were unchanged from
+specs/revisions.md. Examined core event signing, chain validation, commit,
+ingest, projector timestamp writes, and rebuild replay.
+
+Learned: projection applies events in SQLite insertion order, not `created_at`
+order. Rebuild replays `ORDER BY rowid`, preserving the original order. Chain
+validation checks sequence and previous head only. Compared the relevant files
+between 87f9e8c and fb54e43: only `BEGIN IMMEDIATE` transaction changes; the
+ordering behavior is unchanged and finding 0130 still holds.
+
+Unknown: what an ingested event leaves behind when `project_add_evidence` cannot
+find its target assertion.
+
+Next: trace `oag_events::projector::project_add_evidence`.
