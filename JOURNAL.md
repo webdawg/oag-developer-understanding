@@ -2132,3 +2132,17 @@ every item through the normal accept rule. No daemon was run.
 Unknown: what the ping handlers return and disclose.
 
 Next: trace `oag_listend::http::ping`, UDP ping, and server ping handling.
+
+## 2026-11-22 — finding 0181: generated ping responses
+
+Examined HTTP, native, and UDP ping paths, Hello fields, and scoped diff from
+aad2d9b2. Ping blocks unchanged.
+
+Learned: every carrier generates twinkle() on demand and hashes it; no store
+lookup, CID, seed, or peer identity is used. HTTP adds fixed ETag, immutable
+cache, hash.wav filename, audio/wav, and range support. Hello, not ping,
+discloses item count. No carrier was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+Next: re-fetch, then trace `oag_listend::server::serve_session` connection and timeout handling.
