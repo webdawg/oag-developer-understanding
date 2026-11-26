@@ -1948,3 +1948,5 @@ identity file and create/migrate the base SQLite database. C-005 added to the
 connection register. No service was run.
 
 Unknown: re-fetch on the next invocation and choose the largest remaining gap.
+
+Next: re-fetch all branches, then trace `oag_graph::service::GraphService::record_verification` and its counters.
