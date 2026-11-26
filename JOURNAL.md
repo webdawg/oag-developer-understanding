@@ -2036,3 +2036,17 @@ suppression is still not applied. No provider or request was run.
 Unknown: exact cosine formula and invalid-vector handling.
 
 Next: trace `oag_embeddings::rank` and `oag_embeddings::similarity`.
+
+## 2026-11-22 — finding 0175: cosine rank primitive
+
+Examined embedding similarity, rank, storage codec, caller, and tests. Files
+unchanged from 87f9e8c1.
+
+Learned: cosine is dot/product of L2 norms with zero guards for empty,
+mismatched, and zero vectors; no NaN/Infinity filter. Rank uses stable
+descending total_cmp and truncates. Tie order follows unordered list_all rows;
+suppression is not applied here. Tests were read only.
+
+Unknown: how authority batch ranking stores its output and survives rebuild.
+
+Next: re-fetch, then trace `oag_graph::authority::recompute_authority`.
