@@ -1848,3 +1848,17 @@ Failures are 400/429/502; no onion state is stored. No request was made.
 Unknown: whether link-quality scores affect any route choice.
 
 Next: trace `oag_mesh::link_quality::LinkQualityLedger`.
+
+## 2026-11-22 — finding 0162: link quality orders but never drops
+
+Examined the new link_quality module and its route-search and sync call sites.
+
+Learned: a 0.1 EMA per peer address records delivery, not honesty. Unknown peers
+score 0.5; stable descending sort preserves config order on ties. Route search
+orders before spending its fan-out budget; periodic pulls order peers and may
+defer later ones to the next tick. No peer is excluded, and the ledger is not in
+the seven-store snapshot. No sync was run.
+
+Unknown: what membership attestations add and how they expire.
+
+Next: trace `oag_mesh::membership::MembershipRegistry`.
