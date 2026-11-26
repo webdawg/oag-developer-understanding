@@ -1597,3 +1597,17 @@ Tests were read only.
 Unknown: how `llms.txt` facts choose their site-level subject.
 
 Next: trace `oag_crawler::extract::llms_txt::extract`.
+
+## 2026-11-22 — finding 0144: llms.txt site-level links
+
+Examined the `llms.txt` parser, site-origin helper, side fetch, and evidence
+handoff. Compared 87f9e8c: parser unchanged; crawler adds pin CID only.
+
+Learned: link bullets become `links_to` facts from `scheme://host[:port]`, with
+URLs resolved against the actual llms.txt URL. The first title becomes a site
+Name alias. Evidence is `documentation` with the side-fetch hash and pin;
+confidence is 0.5. Tests were read only.
+
+Unknown: how ARD responses choose their subjects.
+
+Next: trace `oag_crawler::extract::ard::parse`.
