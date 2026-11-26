@@ -1729,3 +1729,18 @@ BLAKE3 identity are rechecked. A stalled syscall can still exceed the deadline.
 Unknown: how the shared startup mirror pass avoids holding the store lock.
 
 Next: trace `mirror_existing_shared` and `offer_shared`.
+
+## 2026-11-22 — finding 0154: shared listend startup mirror
+
+Examined main startup ordering, mirror_existing_shared, offer_shared, CID sidecar
+persistence, and the change from aad2d9b2.
+
+Learned: mirroring starts after carriers serve, snapshots Arc handles briefly,
+releases the lock during network calls, uses a 30s whole-pass deadline, and
+persists .cid only on success. Failures stay in a 64-entry in-memory log.
+Finding 0108's ordering and finding 0109's success behavior are corrected, not
+rewritten. No daemon or IPFS node was run.
+
+Unknown: what changed in the imagination repository at 73fadb3c.
+
+Next: compare imagination 73fadb3c with 7b7dcb8e and document one mechanism.

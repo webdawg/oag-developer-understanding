@@ -9,7 +9,7 @@ License: [AGPL-3.0-or-later](LICENSE).
 ## Start here
 
 1. [JOURNAL.md](JOURNAL.md) — what has been investigated and what comes next.
-2. [findings/](findings/) — mechanism findings `0001` through `0153`.
+2. [findings/](findings/) — mechanism findings `0001` through `0154`.
 3. [flows/connection-register.md](flows/connection-register.md) — established and proposed cross-repository connections.
 4. [diagrams/0001-local-assertion-commit.md](diagrams/0001-local-assertion-commit.md) — local assertion sequence.
 
@@ -54,9 +54,9 @@ integration.
 - Mesh signing reuse, self-certified bridge declarations, and caller-selected
   corroboration thresholds.
 - Imagination's one-shot storage read and seed-dependent routing.
-- Listend admission, dual byte bounds, persistence, and hash admission;
-  collisions prefix behavior, bounded tokenization, multi-probe recall, and
-  multi-strategy experiments.
+- Listend admission, dual byte bounds, bounded loading, persistence, and
+  post-bind IPFS mirroring; collisions prefix behavior, bounded tokenization,
+  multi-probe recall, and multi-strategy experiments.
 - Data Roads proposal boundaries and unresolved requirements.
 
 No target tests or services were executed. Coverage is not complete.
