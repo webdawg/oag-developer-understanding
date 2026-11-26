@@ -2365,3 +2365,18 @@ tombstones. Repeated evidence/actor redaction is a 409; node suppression is
 idempotent. No endpoint was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0198: NTP wire codec
+
+All six source branches fetched successfully; heads unchanged. Examined NTP
+timestamp conversion, client/server packet builders, upstream query, error
+types, and diff.
+
+Learned: 48-byte NTPv4 subset uses mode 3/4, echoes transmit as origin, and
+reports caller-supplied verified time in reference/receive/transmit. Upstream
+queries use T1-T4 with 5s bounds and reject wrong sender/mode/length. No UDP
+packet was sent.
+
+Unknown: what API span logging records beyond duration.
+
+Next: trace `oag_api::logging::ApiMakeSpan` and `on_response`.
