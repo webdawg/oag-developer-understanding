@@ -1554,3 +1554,18 @@ Unknown: which JSON-LD fields become assertions and what evidence they carry.
 
 Next: trace `oag_crawler::extract::json_ld::extract_from_html` and
 `extract_from_json`.
+
+## 2026-11-22 — finding 0141: narrow JSON-LD extraction
+
+Examined JSON-LD parsing, extractor data types, and crawler assertion of
+extracted facts. Compared 87f9e8c: extractor unchanged; crawler change is pin
+CIDs only.
+
+Learned: only software, organization URL, name, and sameAs shapes are
+recognized. Malformed JSON and unknown types are silently ignored. Facts become
+StructuredExtraction assertions with page evidence at confidence 0.7; failed
+facts and unresolved aliases are skipped, not fatal. Tests were read only.
+
+Unknown: which HTML tags and attributes html_meta extracts.
+
+Next: trace `oag_crawler::extract::html_meta::extract`.
