@@ -1,12 +1,10 @@
 # Improvements
 
-Concrete backlog. Take the top open item. Do not mass-close.
+Top item first. Keep at least three open. Add file paths when the list thins.
 
-- [ ] `specs/inventory/*.txt`, `specs/coverage.md` — generate from the six pins in `GOAL.md`. Acceptance: `bash scripts/goal-check.sh` no longer reports missing inventory or coverage.
-- [ ] `findings/0131-*.md`, `JOURNAL.md` — projection order of revocation versus assertion against `created_at` in `crates/oag-events/src/projector.rs` at `87f9e8c1`. Acceptance: finding cites that file and journal Next names one unreviewed symbol.
-- [ ] `crates/oag-graph/src/history.rs` at `87f9e8c1` — explain history reads versus event-log residue. Acceptance: one finding cites `history.rs` and a coverage row leaves `unreviewed`.
-- [ ] `crates/oag-graph/src/provenance.rs` at `87f9e8c1` — explain provenance assembly and what it does not prove. Acceptance: one finding cites `provenance.rs`.
-- [ ] `crates/oag-graph/src/pins.rs` at `87f9e8c1` — explain pin storage versus transfer admission. Acceptance: one finding cites `pins.rs`.
-- [ ] `crates/oag-sync/src/gravity.rs` at `87f9e8c1` — explain gravity scoring and whether sync uses it as a gate. Acceptance: one finding cites `gravity.rs`.
-- [ ] `crates/oag-sync/src/trust.rs` and `crates/oag-sync/src/presence.rs` at `87f9e8c1` — explain trust updates versus presence writes. Acceptance: one finding cites both files or two findings if the mechanisms differ.
-- [ ] `crates/oag-api/src/ntp_wire.rs` at `87f9e8c1` — explain NTP wire use and clock-skew limits. Acceptance: one finding cites `ntp_wire.rs`.
+- [ ] `specs/inventory/open-agent-graph.txt`, `specs/coverage.md` — inventory `origin/main` and mark paths changed since `87f9e8c1c2bc8cbfbec1c34800fbf40b2fdae6fe` as `stale`. Acceptance: coverage names every changed `*.rs` path from `git diff --name-only`.
+- [ ] `crates/oag-events/src/projector.rs` at `origin/main` — re-check revocation versus assertion ordering against `created_at`. Acceptance: finding `0131` cites that file and the current `latest` SHA.
+- [ ] `specs/revisions.md` — after core stale rows are cleared, set open-agent-graph `explained` to `latest`. Acceptance: `git rev-list --count <explained>..origin/main` is 0 and `JOURNAL.md` names the SHA.
+- [ ] `crates/oag-mesh` at `45f9fa8a16f65fc4a2e2fe5238bbbc2a5e462574` — diff against `9f5d89e9` and re-audit one changed file. Acceptance: one finding cites the mesh `latest` SHA.
+- [ ] `crates/oag-listend` at `b87dcac9a3c9e0059d90e698e2ec40fb2769ec41` — diff against `aad2d9b2` and re-audit one changed file. Acceptance: one finding cites the listend `latest` SHA.
+- [ ] `flows/connection-register.md` — re-check each row against current `latest` imports. Acceptance: every row names the SHA it was last confirmed against.

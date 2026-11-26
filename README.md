@@ -13,10 +13,13 @@ License: [AGPL-3.0-or-later](LICENSE).
 3. [flows/connection-register.md](flows/connection-register.md) — established and proposed cross-repository connections.
 4. [diagrams/0001-local-assertion-commit.md](diagrams/0001-local-assertion-commit.md) — local assertion sequence.
 
-This repository explains pinned revisions. It is not a promise about later
-upstream commits, and it does not modify the target repositories.
+Findings cite the commit they inspected. Live tracking lives in
+[specs/revisions.md](specs/revisions.md): `latest` is the fetched branch head,
+`explained` is how far the write-up has caught up. The loop keeps fetching and
+never treats a catch-up as finished. This repository does not modify the target
+repositories.
 
-## Pinned inputs for the current pass
+## Baseline inputs already explained
 
 | Repository | Branch | Commit |
 | --- | --- | --- |

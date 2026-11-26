@@ -1,17 +1,15 @@
 # Assumptions
 
-- The mission is the README goal: evidence-backed mechanism explanations for the
-  six pinned revisions, not implementation work and not a promise about later
-  commits.
-- Local checkouts are newer than the pins. `rust-ai` HEAD was `fb54e43` at spec
-  time. Reading those working trees would contaminate findings.
-- `data-roads` is not checked out beside the others. Clone it read-only to
-  `/tmp/oag-pins/data-roads` if `git cat-file` cannot see
-  `b5cd2f4e8618f955eb06dd1c4d3edc7234041a7e`.
-- Inspection-only remains the method until the operator explicitly asks for
-  Observed runs. Do not start servers or tests to raise the score.
-- `unknown-blocked` is allowed for at most eight inventory paths. That cap is a
-  loop guard, not a claim that only eight unknowns exist in the code. Unresolved
-  behavior inside a reviewed file belongs in the finding and journal.
-- This directory is a nested git repo inside `open-agent-graph`. Commits belong
-  only to `oag-developer-understanding`.
+- The mission never completes. Upstream commits keep arriving. A green-looking
+  score is a cue to fetch again, not a cue to stop.
+- `specs/revisions.md` `explained` values are the historical pass that findings
+  `0001`–`0130` inspected. `latest` values were fetched on 2026-11-26 and are
+  already ahead for every repo except data-roads.
+- Local working trees may be dirty or newer than `origin/<branch>`. They are not
+  evidence. `git fetch` is the only allowed write to a target git dir.
+- `/tmp/oag-pins/data-roads` is disposable. Re-clone it if the pin directory
+  disappears. Do not vendor it into this repo.
+- Inspection-only remains the method. Do not start target tests or servers to
+  raise the score.
+- This directory is a nested git repo. Commits belong only here, not in the
+  parent `open-agent-graph` checkout.

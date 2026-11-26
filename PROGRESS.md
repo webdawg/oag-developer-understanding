@@ -2,20 +2,21 @@
 
 ## State
 
-Repository cloned to this directory at `321c68d` plus the loop spec. Findings
-`0001`–`0130` exist. Coverage manifest does not exist yet. No target tests have
-been run. Latest journal Next is projection ordering against `created_at`.
+Loop spec now tracks `origin/<branch>` instead of frozen pins. Findings
+`0001`–`0130` still describe the `explained` SHAs in `specs/revisions.md`.
+Fetched `latest` is ahead for core (424), mesh (44), listend (39), collisions
+(3), and imagination (3). Data Roads matches.
 
 ## Decisions
 
-- Evidence must come from the README pins, not newer working trees.
-- Mission completion is `scripts/goal-check.sh` exit 0, not a prose claim.
-- One mechanism, one finding, one commit.
+- Never `LOOP_DONE`. The check always exits 1.
+- A drifted `latest` cell is fixed before any new mechanism.
+- Catch-up re-audits `explained..latest` one repo, then one stale file, per turn.
 
 ## Next three steps
 
-1. Generate `specs/inventory/*.txt` and `specs/coverage.md` (`unreviewed` only).
-2. Write finding `0131` from `crates/oag-events/src/projector.rs` at
-   `87f9e8c1c2bc8cbfbec1c34800fbf40b2fdae6fe` (revocation versus assertion order).
-3. Run `bash scripts/goal-check.sh` and append the new Unknown as the next
-   journal target.
+1. Fetch. If `specs/revisions.md` matches `origin`, begin the core catch-up:
+   `git -C /home/webdawg/DATA/CODE/rust-ai diff --stat 87f9e8c1c2bc8cbfbec1c34800fbf40b2fdae6fe..origin/main`.
+2. Write `specs/inventory/open-agent-graph.txt` from that `origin/main` tree and
+   mark changed paths `stale` in `specs/coverage.md`.
+3. Re-audit one stale path, or if none exist yet, `crates/oag-events/src/projector.rs` at `origin/main`, as finding `0131`.
