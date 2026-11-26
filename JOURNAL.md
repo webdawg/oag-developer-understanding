@@ -2008,3 +2008,17 @@ evidence metadata with INSERT OR IGNORE. No route or migration was run.
 Unknown: what evidence redaction removes and what rebuild reapplies.
 
 Next: trace `oag_graph::redaction::GraphService::redact_evidence`.
+
+## 2026-11-22 — finding 0173: keyset search cursor
+
+Examined search_page, search_after, SearchCursor, keyset SQL, REST DTO, and
+handler. New since 87f9e8c1.
+
+Learned: cursor wins over offset; the token is a node ID whose current FTS5
+rank is recomputed. Malformed or stale cursors restart the walk. Page fetches
+limit+1 rows to decide next_cursor; no server state is stored. No search was
+run.
+
+Unknown: how REST/MCP semantic search diverges from cursor pagination.
+
+Next: trace `graph_search` in oag-mcp and the REST search handler.
