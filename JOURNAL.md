@@ -2146,3 +2146,17 @@ discloses item count. No carrier was run.
 Unknown: re-fetch next invocation and choose the largest remaining gap.
 
 Next: re-fetch, then trace `oag_listend::server::serve_session` connection and timeout handling.
+
+## 2026-11-22 — finding 0182: bounded panic-safe listend sessions
+
+Examined native server limits, accept loop, ActiveGuard, per-session timeout,
+decode handling, and shutdown signal.
+
+Learned: at most 64 sessions wait on a semaphore, each with 10s read/write and
+1800s total timeout. ActiveGuard releases the counter on panic unwind, replacing
+a manual decrement that could leak it. BadHash gets a Rejected response; other
+malformed frames close the stream. No listener or test was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+Next: re-fetch, then trace `oag_listend::protocol::read_frame` and `decode_request` length rules.
