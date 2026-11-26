@@ -2218,3 +2218,17 @@ run.
 Unknown: how the IPFS CID fetch route admits and verifies remote bytes.
 
 Next: re-fetch, then trace `oag_listend::ipfs` and `GET /ipfs/{cid}`.
+
+## 2026-11-22 — finding 0187: bounded IPFS audio GET
+
+Examined GET /ipfs/{cid}, IpfsPublisher::cat, CID validation, reply bounds,
+chunk decoding change, and response headers.
+
+Learned: held CID mappings are served before network fetch. Unknown CIDs go via
+plain HTTP cat with 10s reads, capped replies, and checked chunk arithmetic.
+Bytes are sniffed as audio but not checked against the IPFS multihash; ETag is
+the CID and X-Content-Hash is BLAKE3 of returned bytes. No IPFS node was run.
+
+Unknown: how CID text and operator API addresses are parsed into requests.
+
+Next: trace `oag_listend::ipfs::validate_cid` and `split_api`.
