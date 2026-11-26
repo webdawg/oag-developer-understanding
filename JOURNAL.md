@@ -1790,3 +1790,17 @@ storage. Paper is four lines and unstarted.
 Unknown: which new oag-mesh runtime module needs audit at 45f9fa8a.
 
 Next: compare mesh 45f9fa8a with 9f5d89e9 and document one new runtime module.
+
+## 2026-11-22 — finding 0158: mesh snapshot persistence
+
+Compared mesh 9f5d89e9 with 45f9fa8a and examined the new persistence module
+and MeshState save/load.
+
+Learned: seven JSON snapshots are written with unique temp names and renames,
+then a BLAKE3 commit marker is written last. Load refuses a mismatched set but
+accepts a legacy directory with no marker. Identity, peers, limiters, instance
+ID, and link quality are reconstructed fresh. No crash or save was executed.
+
+Unknown: which limiter governs which new mesh route.
+
+Next: trace `oag_mesh::rate_limit::RateLimiter` and `TokenBucket`.
