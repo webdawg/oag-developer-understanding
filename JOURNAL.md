@@ -2189,3 +2189,17 @@ inline handling could block other peers. No socket was run.
 Unknown: how HTTP carrier concurrency and shutdown work.
 
 Next: trace `oag_listend::http::HttpCarrier::run`.
+
+## 2026-11-22 — finding 0185: bounded one-request HTTP carrier
+
+Examined HTTP bind/run, per-connection timeout, generic stream handlers,
+ActiveGuard use, CORS preflight, unread-body drain, and scoped diff.
+
+Learned: HTTP is one request per connection, 64 concurrent permits, 1800s total
+and 10s IO timeouts, 16KiB head and frame-derived body caps. ActiveGuard makes
+active-session accounting panic-safe. OPTIONS returns wildcard CORS; unread
+bodies are drained to avoid TCP reset. No listener was run.
+
+Unknown: how read_request distinguishes 413 from malformed heads.
+
+Next: trace `oag_listend::http::read_request`.

@@ -9,7 +9,7 @@ License: [AGPL-3.0-or-later](LICENSE).
 ## Start here
 
 1. [JOURNAL.md](JOURNAL.md) — what has been investigated and what comes next.
-2. [findings/](findings/) — mechanism findings `0001` through `0184`.
+2. [findings/](findings/) — mechanism findings `0001` through `0185`.
 3. [flows/connection-register.md](flows/connection-register.md) — established and proposed cross-repository connections.
 4. [diagrams/0001-local-assertion-commit.md](diagrams/0001-local-assertion-commit.md) — local assertion sequence.
 
@@ -63,7 +63,8 @@ integration.
 - Listend admission, dual byte bounds, bounded loading, persistence, and
   post-bind IPFS mirroring, closed audio-signature sniffing, deterministic
   generated audio, ping responses, bounded sessions, length-first frame
-  decoding, and concurrent UDP replies; collisions
+  decoding, concurrent UDP replies, and bounded one-shot HTTP connections;
+  collisions
   prefix behavior, bounded tokenization, multi-probe recall, and multi-strategy
   experiments.
 - Data Roads proposal boundaries and unresolved requirements.
