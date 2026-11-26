@@ -1921,3 +1921,17 @@ rejection of heads uses it. No sync was run.
 Unknown: how the periodic sync scheduling and jitter actually work.
 
 Next: trace `spawn_periodic_sync_with_jitter`.
+
+## 2026-11-22 — finding 0167: explicit jittered mesh sync loop
+
+Examined periodic sync helpers, jitter generation, budget variant, and
+cancellation notes. New since 9f5d89e9.
+
+Learned: no loop starts from MeshState construction. Callers spawn a task that
+syncs immediately then sleeps interval+jitter after each tick; jitter is a
+hashed clock phase, not crypto. Budget variant caps the tick and skips jitter.
+State is not durable; abort cancels at an await point. No task was run.
+
+Unknown: what a caller must provide to run a mesh node.
+
+Next: inspect `oag_mesh::node::NodeAdapter`.
