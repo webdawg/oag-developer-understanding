@@ -2247,3 +2247,17 @@ run.
 Unknown: what Unix-socket admission and path handling add.
 
 Next: re-fetch, then trace `oag_listend::unix::UnixCarrier`.
+
+## 2026-11-22 — finding 0189: Unix carrier shares TCP sessions
+
+All six source branches fetched successfully; heads unchanged. Examined Unix
+bind policy, accept loop, shared serve_session call, and scoped diff.
+
+Learned: only path binding and stale-socket handling are Unix-specific. A
+non-socket path is never deleted, a live socket is not stolen, and a stale
+socket is removed. Sessions use the same 64 permits, 10s IO, 1800s total
+timeout, frame cap, protocol, and audio rule as TCP. No socket was run.
+
+Unknown: how main starts carriers and drains active sessions on shutdown.
+
+Next: trace `oag_listend::main` startup and shutdown ordering.
