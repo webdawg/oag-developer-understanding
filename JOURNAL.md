@@ -2353,3 +2353,15 @@ the node, with no status filter, dedup, cap, or ordering. REST was added at the
 newer commit with the same response shape as MCP. No endpoint was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0197: redaction API wrappers
+
+All six source branches fetched successfully; heads unchanged. Examined REST
+redaction handlers/routes, MCP tools, reason DTO, status mapping, and diff.
+
+Learned: REST and MCP only authenticate, parse IDs, and delegate to the service.
+The service enforces Admin; list views combine evidence, suppression, and actor
+tombstones. Repeated evidence/actor redaction is a 409; node suppression is
+idempotent. No endpoint was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
