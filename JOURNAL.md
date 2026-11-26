@@ -1626,3 +1626,18 @@ were read only.
 Unknown: how the A2A agent-card parser chooses subjects and predicates.
 
 Next: trace `oag_crawler::extract::a2a::parse`.
+
+## 2026-11-22 — finding 0146: A2A card subject is the page
+
+Examined the A2A parser and card side fetch. Compared 87f9e8c: parser
+unchanged; crawler adds pin CID only.
+
+Learned: a valid card always gives the original crawled page `instance_of
+concept:a2a-agent`. Name/provider/skills become aliases and facts; provider URL
+beats organization name, skill name beats id. Evidence URI is the card URL,
+subject is the page URL. Tests were read only.
+
+Unknown: when the LLM fallback calls an external model and how it fails.
+
+Next: trace `oag_crawler::llm_extract::LlmExtractor::extract` and its
+OpenAI-compatible implementation.
