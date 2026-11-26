@@ -1980,3 +1980,17 @@ pool waits are missing. Both reset on restart. No endpoint or search was run.
 Unknown: what events_pending_chain counts and whether forks alter it.
 
 Next: trace `oag_storage::repo::stats::events_pending_chain`.
+
+## 2026-11-22 — finding 0171: dangling predecessor gauge
+
+Examined the new events_pending_chain query, snapshot/rendering, event schema,
+ingest handling, and direct-insertion test. New since 87f9e8c1.
+
+Learned: the gauge counts events with a non-null predecessor ID absent from the
+local events table. Genesis and present predecessors do not count. Rejected gaps
+and fork evidence do not create such rows; tests insert them directly. No scrape
+or ingest was run.
+
+Unknown: what pin discovery records and what "holds" means.
+
+Next: trace `oag_graph::pins::GraphService` pin helpers.
