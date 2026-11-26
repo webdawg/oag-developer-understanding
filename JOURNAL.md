@@ -1877,3 +1877,17 @@ path appears. No request was made.
 Unknown: how responder acknowledgments are admitted and exposed.
 
 Next: trace `oag_mesh::responder::ResponderAcknowledgmentLog`.
+
+## 2026-11-22 — finding 0164: responder acks as latest signed state
+
+Examined the new responder module and its transport routes. Compared with
+9f5d89e9: new module and routes.
+
+Learned: acks are signed per nonce with active true/false; no PoW and no nonce
+existence check. One record per (nonce, responder); strictly older arrivals are
+ignored, equal timestamps replace and bump sequence. Active responders are an
+unordered advisory list. Snapshot persists if caller saves. No request was made.
+
+Unknown: what route-search fan-out budget actually bounds.
+
+Next: trace `oag_mesh::transport::search_for_route`.
