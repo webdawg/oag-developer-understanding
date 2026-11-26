@@ -9,7 +9,7 @@ License: [AGPL-3.0-or-later](LICENSE).
 ## Start here
 
 1. [JOURNAL.md](JOURNAL.md) — what has been investigated and what comes next.
-2. [findings/](findings/) — mechanism findings `0001` through `0179`.
+2. [findings/](findings/) — mechanism findings `0001` through `0180`.
 3. [flows/connection-register.md](flows/connection-register.md) — established and proposed cross-repository connections.
 4. [diagrams/0001-local-assertion-commit.md](diagrams/0001-local-assertion-commit.md) — local assertion sequence.
 
@@ -61,7 +61,8 @@ integration.
 - Imagination's one-shot storage read, seed-dependent routing, plain URL
   resolver, and separate framed Reticulum carrier.
 - Listend admission, dual byte bounds, bounded loading, persistence, and
-  post-bind IPFS mirroring and closed audio-signature sniffing; collisions
+  post-bind IPFS mirroring, closed audio-signature sniffing, and deterministic
+  generated audio; collisions
   prefix behavior, bounded tokenization, multi-probe recall, and multi-strategy
   experiments.
 - Data Roads proposal boundaries and unresolved requirements.

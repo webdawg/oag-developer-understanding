@@ -2118,3 +2118,17 @@ now documented. Tests were read only.
 Unknown: how generated startup audio is bounded and hashed.
 
 Next: trace `oag_listend::wav::generate_n`, `sounds`, and `twinkle`.
+
+## 2026-11-22 — finding 0180: deterministic generated audio
+
+Examined WAV generation, sample cap, fixed ping, seed set, and startup
+publication. wav.rs unchanged from aad2d9b2.
+
+Learned: generated audio is 8 kHz mono 16-bit WAV, each item capped at 40,000
+samples. sounds() cycles kinds with derived seeds; twinkle() is fixed and shares
+one hash across daemons. publish_generated seeds only an empty store and sends
+every item through the normal accept rule. No daemon was run.
+
+Unknown: what the ping handlers return and disclose.
+
+Next: trace `oag_listend::http::ping`, UDP ping, and server ping handling.
