@@ -2174,3 +2174,18 @@ error answered while keeping the session open. No socket was used.
 Unknown: re-fetch next invocation and choose the largest remaining gap.
 
 Next: re-fetch, then trace `oag_listend::udp::UdpCarrier::run` frame-size and peer handling.
+
+## 2026-11-22 — finding 0184: concurrent bounded UDP handling
+
+All six source branches fetched successfully; heads unchanged. Examined UDP
+run loop, size constants, request handling, oversized-reply rejection, and the
+change from aad2d9b2.
+
+Learned: each datagram is copied and handled in a task under a 64-permit
+semaphore with ActiveGuard accounting. Replies over 65,507 bytes become
+Rejected instead of truncation; IO timeout is 10s; list page caps at 900. Prior
+inline handling could block other peers. No socket was run.
+
+Unknown: how HTTP carrier concurrency and shutdown work.
+
+Next: trace `oag_listend::http::HttpCarrier::run`.
