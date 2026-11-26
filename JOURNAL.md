@@ -2104,3 +2104,17 @@ request was run.
 
 Next: re-fetch, then re-audit `oag_listend::wav::AudioFormat::sniff` at
 b87dcac9 against finding 0030.
+
+## 2026-11-22 — finding 0179: listend sniff re-audit
+
+All six source branches fetched successfully; heads unchanged. Compared the
+sniff block from aad2d9b2 with b87dcac9: unchanged.
+
+Learned: finding 0030 still holds. The sniff is a closed signature set: WAV,
+AIFF, FLAC, Ogg BOS codec prefixes, ID3 or checked raw MPEG frames, and ftyp
+audio brands. It decodes nothing. The omitted raw-frame and M4A branches are
+now documented. Tests were read only.
+
+Unknown: how generated startup audio is bounded and hashed.
+
+Next: trace `oag_listend::wav::generate_n`, `sounds`, and `twinkle`.
