@@ -1906,3 +1906,18 @@ node-wide. No search was run.
 Unknown: how sync decides a store is stale and merges snapshots.
 
 Next: trace `pull_and_merge` and `heads_changed`.
+
+## 2026-11-22 — finding 0166: per-store mesh pull heads
+
+Examined pull_and_merge, heads_changed, merge_heads, pull_changed_stores, and
+periodic ordering. New since 9f5d89e9.
+
+Learned: five version stamps decide which snapshots are fetched. Instance ID
+change or no prior heads forces all five; instance ID is always copied from
+remote. Successful stores advance their heads independently; failed stores keep
+old heads and retry. Unreachable peers skip the full-pull fallback; HTTP
+rejection of heads uses it. No sync was run.
+
+Unknown: how the periodic sync scheduling and jitter actually work.
+
+Next: trace `spawn_periodic_sync_with_jitter`.
