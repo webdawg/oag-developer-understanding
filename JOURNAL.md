@@ -1437,3 +1437,22 @@ only the final cached status.
 
 Next: trace `oag_graph::history::GraphService::get_history` and
 `oag-api/src/human.rs::HistoryEntryView`.
+
+## 2026-11-22 — finding 0134: history ordering
+
+Examined `get_history`, the `history_for` join, REST/MCP exposure, and the two
+human pages. All six source branches were fetched at the start of this session;
+heads remain as listed in specs/revisions.md.
+
+Learned: history entries carry payload and signed `created_at`, but SQL orders
+by origin peer bytes then sequence. REST and MCP expose the full entries; the
+human node page drops payload. The human assertion page picks the first
+supersede event in that origin/sequence order for its link. Dispute and
+retraction detail lists have no ORDER BY. Compared with 87f9e8c: history code
+is unchanged; other changes in the same files are search paging, pins, and
+aliases.
+
+Unknown: which observation wins when `max_by_key(observed_at)` ties.
+
+Next: trace `oag_storage::repo::assertions::list_observations` and
+`oag-api/src/human.rs::observation_view`.
