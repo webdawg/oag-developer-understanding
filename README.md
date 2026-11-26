@@ -9,7 +9,7 @@ License: [AGPL-3.0-or-later](LICENSE).
 ## Start here
 
 1. [JOURNAL.md](JOURNAL.md) — what has been investigated and what comes next.
-2. [findings/](findings/) — mechanism findings `0001` through `0198`.
+2. [findings/](findings/) — mechanism findings `0001` through `0199`.
 3. [flows/connection-register.md](flows/connection-register.md) — established and proposed cross-repository connections.
 4. [diagrams/0001-local-assertion-commit.md](diagrams/0001-local-assertion-commit.md) — local assertion sequence.
 
@@ -53,7 +53,7 @@ integration.
   metrics including verification-counter, latency, and chain-fragment
   boundaries, gateway signature, fanout, nonce, relay bounds, NTP wire answers
   kept separate from graph clocks, crawler-shared DNS validation and pinning,
-  and recorded CID pin discovery.
+  recorded CID pin discovery, and REST request span logging.
 - Mesh signing reuse, self-certified bridge declarations, caller-selected
   corroboration thresholds, committed JSON snapshot persistence, route
   limiters, blinded responder dispatch, onion relays, liveness-ordered peers,

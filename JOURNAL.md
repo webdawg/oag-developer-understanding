@@ -2380,3 +2380,15 @@ packet was sent.
 Unknown: what API span logging records beyond duration.
 
 Next: trace `oag_api::logging::ApiMakeSpan` and `on_response`.
+
+## 2026-11-22 — finding 0199: REST span logging
+
+All six source branches fetched successfully; heads unchanged. Examined span
+creation, actor recording, response completion, router layers, and diff.
+
+Learned: REST requests get pid-counter request IDs, peer/path/method span
+fields, actor_id from auth, and a separate completion event with duration_ms and
+ok/error status. Query strings and MCP spans remain deferred. No request or log
+sink was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
