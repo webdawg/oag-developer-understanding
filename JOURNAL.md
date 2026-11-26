@@ -1401,3 +1401,21 @@ Unknown: what an ingested event leaves behind when `project_add_evidence` cannot
 find its target assertion.
 
 Next: trace `oag_events::projector::project_add_evidence`.
+
+## 2026-11-22 — finding 0132: missing evidence target
+
+Re-read the checked-out source through `git show origin/main:<path>`; no
+working tree or test run was used. Examined `project_add_evidence`, ingest and
+commit transaction order, `EventsError::NotFound`, and both sync ingest
+callers.
+
+Learned: a valid AddEvidence event whose assertion is absent fails projection.
+The raw event row and origin head are not committed. Push counts it skipped;
+pull records an error string, breaks that origin's page, and retries the same
+unconsumed sequence on a later tick. Compared with 87f9e8c: service.rs added
+rate-limit backoff only; the ingest error arm is unchanged.
+
+Unknown: whether a late status event can overwrite an assertion status already
+set by an event with a later `created_at`.
+
+Next: trace `oag_storage::repo::assertions::set_status`.
