@@ -2276,3 +2276,16 @@ No daemon or signal was run.
 Unknown: re-fetch next invocation and choose the largest remaining gap.
 
 Next: re-fetch, then trace `oag_listend::reticulum::ReticulumCarrier::bind` and `run`.
+
+## 2026-11-22 — finding 0191: per-link Reticulum workers
+
+All six source branches fetched successfully; heads unchanged. Examined the
+feature-gated Reticulum bind path, reassembly buffers, event loop, workers,
+reply chunking, and scoped diff.
+
+Learned: a stable seed gives a stable destination address. Shared event loop
+reassembles bounded frames and feeds one worker per link, capped at 64 links and
+queued frames. Overfull links are dropped; packet sends are bounded to 10s.
+Audio handling is the shared handle path. No Reticulum interface was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
