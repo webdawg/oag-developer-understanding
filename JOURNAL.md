@@ -1456,3 +1456,21 @@ Unknown: which observation wins when `max_by_key(observed_at)` ties.
 
 Next: trace `oag_storage::repo::assertions::list_observations` and
 `oag-api/src/human.rs::observation_view`.
+
+## 2026-11-22 — finding 0135: observation time in display versus score
+
+Examined the verify API timestamp path, observation storage, human views, and
+corroboration inputs.
+
+Learned: `max_by_key(observed_at)` chooses the node page's single displayed
+observation, with no target-defined tie-break over an unordered SQL query. The
+human views drop observer identity and event ID. Corroboration averages result
+weights from all observations on active assertions and never reads their
+`observed_at`; freshness reads assertion timestamps instead. Compared with
+87f9e8c: observation storage is unchanged; human changes are search paging and
+corroboration changes are evidence grouping, not these lines.
+
+Unknown: which clock drives freshness and what a future timestamp can alter.
+
+Next: trace `oag_graph::service::chrono_now` and
+`oag_graph::corroboration::freshness_from_age`.
