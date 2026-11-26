@@ -1656,3 +1656,18 @@ the change; prompt and parsing are unchanged. Tests were read only.
 Unknown: which candidate strings graph assert validation accepts or rejects.
 
 Next: trace `oag_graph::assert::GraphService::assert` and `AssertInput::validate`.
+
+## 2026-11-22 — finding 0149: collisions tokenizers
+
+Fetched collisions master b19fc44d; compared with explained dfc8ca95. Library
+is unchanged; only scripts changed. Examined Tokenizer variants and their unit
+generation.
+
+Learned: Words, Characters, stride WordsBudget, shuffled deterministic
+WordsBudget, and window sampling are pure deterministic generators. Budget
+variants cap units before SimHash; trade-offs are documented experiment intent,
+not reproduced here. Default remains unigram words with bigrams off.
+
+Unknown: how a second hash domain interacts with the prefix index.
+
+Next: trace `oag_collisions::simhash_with_domain` and the multi-hash index path.
