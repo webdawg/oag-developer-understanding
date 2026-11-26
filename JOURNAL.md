@@ -2050,3 +2050,16 @@ suppression is not applied here. Tests were read only.
 Unknown: how authority batch ranking stores its output and survives rebuild.
 
 Next: re-fetch, then trace `oag_graph::authority::recompute_authority`.
+
+## 2026-11-22 — finding 0176: deterministic subgraph arrays
+
+Examined get_subgraph at fb54e43 and compared with 87f9e8c1.
+
+Learned: returned nodes now sort by (distance, canonical_identifier) and edges
+by id. Assertions are collected from visited_edges.keys() before the sort, so
+their order remains unspecified despite the source comment. Soft node cap and
+both-direction traversal from finding 0063 still hold. No request was run.
+
+Unknown: whether resolve candidates gained deterministic ordering.
+
+Next: trace `oag_graph::resolve` at fb54e43.
