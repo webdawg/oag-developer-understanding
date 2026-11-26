@@ -1,6 +1,6 @@
 # Superseded
 
-The procedure is [ENGINE.md](ENGINE.md). Paste that file. Do not run `/loop` from this file.
+Paste [ENGINE.md](ENGINE.md). Do not follow anything below this line.
 
 # Goal — keep explaining OAG, forever, at latest HEAD
 
