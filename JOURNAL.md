@@ -2094,3 +2094,13 @@ call site changed. No request was run.
 Unknown: which transfer mechanism remains undocumented at fb54e43.
 
 Next: re-fetch, then inspect `oag_api::transfer` at the newer core commit.
+
+## 2026-11-22 — transfer recheck
+
+Compared `oag_api::transfer` from 87f9e8c1 with fb54e431. The only change is a
+new test asserting that `relay_fetch` skips a peer already in the relay path;
+the tested behavior itself is unchanged and finding 0020 still holds. No relay
+request was run.
+
+Next: re-fetch, then re-audit `oag_listend::wav::AudioFormat::sniff` at
+b87dcac9 against finding 0030.
