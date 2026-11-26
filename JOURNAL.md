@@ -1583,3 +1583,17 @@ reduce the summary count. Tests were read only.
 Unknown: what Markdown extraction turns into candidate facts and aliases.
 
 Next: trace `oag_crawler::extract::markdown::extract`.
+
+## 2026-11-22 — finding 0143: Markdown first-H1 alias
+
+Examined `markdown::extract`, its dispatch, and its tests. Compared 87f9e8c:
+unchanged.
+
+Learned: only the first line with a left-trimmed `"# "` prefix becomes a `Name`
+alias; empty first H1 does not stop the scan. No facts or links are extracted.
+`text/plain` passes the fetch allowlist but gets no deterministic extraction.
+Tests were read only.
+
+Unknown: how `llms.txt` facts choose their site-level subject.
+
+Next: trace `oag_crawler::extract::llms_txt::extract`.
