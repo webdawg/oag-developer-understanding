@@ -1935,3 +1935,16 @@ State is not durable; abort cancels at an await point. No task was run.
 Unknown: what a caller must provide to run a mesh node.
 
 Next: inspect `oag_mesh::node::NodeAdapter`.
+
+## 2026-11-22 — finding 0168: implemented base-to-mesh adapter
+
+Examined the new node adapter, locked core storage reads, and the connection
+register. Mesh 45f9fa8a locks core 59ccf3de in Cargo.lock.
+
+Learned: MeshNodeAdapter loads the base identity, first address per peer, and
+mesh snapshots under <data-dir>/mesh/, then saves only mesh state. It is the
+first implemented base-to-mesh connection. Load can still generate an absent
+identity file and create/migrate the base SQLite database. C-005 added to the
+connection register. No service was run.
+
+Unknown: re-fetch on the next invocation and choose the largest remaining gap.
