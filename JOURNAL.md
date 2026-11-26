@@ -2289,3 +2289,17 @@ queued frames. Overfull links are dropped; packet sends are bounded to 10s.
 Audio handling is the shared handle path. No Reticulum interface was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0192: imagination data pads
+
+All six source branches fetched successfully; heads unchanged. Examined
+datapad split, manifest, attach, gather, reconstruct, tests, and scoped diff.
+
+Learned: files split into ordered shards with BLAKE3 whole-file manifest IDs;
+small files get empty tail shards. Reconstruction checks exact count, contiguous
+indices, and hash. No erasure coding, replication, consensus, or transport is in
+this module. Tests were read only.
+
+Unknown: whether the TCP socket carries PadRequest/PadResponse and wires gathering.
+
+Next: trace `oag_imagination::socket::serve` PadRequest/PadResponse handling.
