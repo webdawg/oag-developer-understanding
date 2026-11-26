@@ -1818,3 +1818,19 @@ restart. No request or test was run.
 Unknown: how responder subscriptions and inbox store and deliver events.
 
 Next: trace `ResponderInbox` and `ResponderSubscriptionRegistry`.
+
+## 2026-11-22 — finding 0160: blinded responder dispatch
+
+Examined the new dispatch module and subscription/inbox routes. Compared with
+9f5d89e9: new module and routes.
+
+Learned: a self-chosen subscription id is a bearer capability. Matching accepted
+anonymous events are cloned into inboxes before the 204; polling drains them.
+Registration needs no identity; unregister does not clear inbox; filter
+replacement does not clear prior events. MeshState can save/load both maps, so
+the module's "not durable" comment is stale for callers that save. No request
+was made.
+
+Unknown: how onion layers are built and peeled.
+
+Next: trace `OnionPayload` and `receive_onion_layer`.
