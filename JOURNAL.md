@@ -1834,3 +1834,17 @@ was made.
 Unknown: how onion layers are built and peeled.
 
 Next: trace `OnionPayload` and `receive_onion_layer`.
+
+## 2026-11-22 — finding 0161: mesh onion relay behavior
+
+Examined onion construction, key derivation, key fetch, relay handler, and
+forwarding helpers. Module is new since 9f5d89e9.
+
+Learned: relays derive X25519 keys from Ed25519 identity, peel one
+ChaCha20-Poly1305 layer, and POST to the `next_hop` recovered from plaintext.
+Peer ID in the fetched key response is unused; no path-length cap appears.
+Failures are 400/429/502; no onion state is stored. No request was made.
+
+Unknown: whether link-quality scores affect any route choice.
+
+Next: trace `oag_mesh::link_quality::LinkQualityLedger`.
