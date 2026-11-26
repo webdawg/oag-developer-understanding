@@ -1775,3 +1775,18 @@ compatibility is documented intent. No target test was run.
 Unknown: which data-roads requirement is still only a proposal.
 
 Next: inspect data-roads b5cd2f4e and record the largest unresolved requirement.
+
+## 2026-11-22 — finding 0157: Data Roads unanswered redundancy model
+
+Read the full data-roads RFC at b5cd2f4e; head unchanged from explained commit.
+
+Learned: the proposed lifecycle is generation, OAG ownership assertion,
+encrypted mesh distribution, access request, time-bounded agreement, renewal or
+lapse, and separate custodian compensation. Effective redundancy, event types,
+payment, renewal mechanics, and security remain explicitly unspecified. The RFC
+denies that mesh already supplies pull anti-entropy or durable cross-cluster
+storage. Paper is four lines and unstarted.
+
+Unknown: which new oag-mesh runtime module needs audit at 45f9fa8a.
+
+Next: compare mesh 45f9fa8a with 9f5d89e9 and document one new runtime module.
