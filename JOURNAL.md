@@ -2303,3 +2303,18 @@ this module. Tests were read only.
 Unknown: whether the TCP socket carries PadRequest/PadResponse and wires gathering.
 
 Next: trace `oag_imagination::socket::serve` PadRequest/PadResponse handling.
+
+## 2026-11-22 — finding 0193: pad gathering ignores requested pad ID
+
+All six source branches fetched successfully; heads unchanged. Examined TCP
+serving limits, PadRequest branch, Engine::data_pad, gather fan-out, and pad
+matching.
+
+Learned: every PadRequest returns the node's own pad; the request's pad_id is
+ignored. gather_file_with fans out to supplied node addresses, at most 32 in
+flight, then maps returned pads by their real IDs to the manifest. No retries;
+duplicates collapse in gather's map. No carrier was run.
+
+Unknown: how the proxied HTTP and IPFS publisher seams fail.
+
+Next: trace `oag_imagination::socket::ProxiedTransport` and `HttpIpfsPublisher`.
