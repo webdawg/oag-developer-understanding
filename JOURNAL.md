@@ -1490,3 +1490,20 @@ are HTTP-only IPv4 pinning moved to the crawler.
 Unknown: what a cached NTP answer returns during its TTL and after expiry.
 
 Next: trace `oag_api::gateway::compute_cache_ttl` and `adjust_for_elapsed`.
+
+## 2026-11-22 — finding 0137: gateway cache reconstruction
+
+Examined the gateway cache map, TTL selection, resolver precedence, and
+front-end startup guard.
+
+Learned: only quorum results populate the cache. An NTP cache hit adds local
+elapsed time to the stored estimate instead of querying again. Zero TTLs are
+not stored; expired entries are not evicted. Direct and relay results are not
+cached. Compared with 87f9e8c: these cache lines are unchanged; the gateway
+diff is HTTP-only IPv4 pinning moved to the crawler.
+
+Unknown: which SSRF checks and address choice the gateway's HTTP upstream path
+reuses from the crawler.
+
+Next: trace `oag_crawler::fetch::resolve_and_validate`,
+`build_pinned_client`, and `prefer_ipv4`.
