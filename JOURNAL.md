@@ -1891,3 +1891,18 @@ unordered advisory list. Snapshot persists if caller saves. No request was made.
 Unknown: what route-search fan-out budget actually bounds.
 
 Next: trace `oag_mesh::transport::search_for_route`.
+
+## 2026-11-22 — finding 0165: mesh route-search fan-out budget
+
+Examined recursive search, entry points, defaults, inbound gate, and result
+selection. New since 9f5d89e9.
+
+Learned: each node checks local tree first, orders peers by link quality, spends
+one budget unit per outbound request, and divides the remainder among children.
+`already_asked` is per branch. Result is shortest found, not globally shortest;
+a direct path aborts other tasks. Inbound token bucket is separate and
+node-wide. No search was run.
+
+Unknown: how sync decides a store is stale and merges snapshots.
+
+Next: trace `pull_and_merge` and `heads_changed`.
