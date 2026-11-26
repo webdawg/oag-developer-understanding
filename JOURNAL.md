@@ -2063,3 +2063,20 @@ both-direction traversal from finding 0063 still hold. No request was run.
 Unknown: whether resolve candidates gained deterministic ordering.
 
 Next: trace `oag_graph::resolve` at fb54e43.
+
+## 2026-11-22 — finding 0177: partial embedding recompute
+
+Examined recompute_embeddings and embedding storage. Files unchanged from
+87f9e8c1.
+
+Learned: recompute clears node_embeddings before the provider loop. Each upsert
+is independent; a provider error leaves only a successful prefix, and semantic
+search reads whatever rows exist. Empty text is skipped; provider names and
+models are stored per row. No provider was run.
+
+Also checked `oag_graph::resolve` at fb54e43: only the nodes::search signature
+changed to add offset 0; finding 0065 still holds.
+
+Unknown: what ordering and duplicates appear in a node's assertion list.
+
+Next: trace `list_assertions_for_node` and `edges::list_touching`.
