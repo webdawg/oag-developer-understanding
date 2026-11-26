@@ -1715,3 +1715,17 @@ by this finding, not rewritten.
 Unknown: what the new load deadline and read-only check mode report.
 
 Next: trace `with_directory`, `check_directory`, and `load_dir_impl`.
+
+## 2026-11-22 — finding 0153: bounded listend directory load
+
+Examined with_directory, check_directory, load_dir_impl, sidecar readers, and
+publish eviction. Compared aad2d9b2 with b87dcac9.
+
+Learned: startup load creates and prunes; check creates and unlinks nothing.
+Both use a 100,000-audio-entry cap and a 300-second deadline, reporting
+truncated/timed_out. Entry names, bytes, audio sniff, sidecar type/size, and
+BLAKE3 identity are rechecked. A stalled syscall can still exceed the deadline.
+
+Unknown: how the shared startup mirror pass avoids holding the store lock.
+
+Next: trace `mirror_existing_shared` and `offer_shared`.
