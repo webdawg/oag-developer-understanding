@@ -2080,3 +2080,17 @@ changed to add offset 0; finding 0065 still holds.
 Unknown: what ordering and duplicates appear in a node's assertion list.
 
 Next: trace `list_assertions_for_node` and `edges::list_touching`.
+
+## 2026-11-22 — finding 0178: unordered node assertion list
+
+Examined list_assertions_for_node, list_touching, list_by_edge, and the scoped
+diff from 87f9e8c1.
+
+Learned: assertions from all touching edges are appended with no ordering at
+either SQL level and no status filter. Unknown node yields empty list; SQL
+errors abort. Behavior unchanged at the newer commit; only a search signature
+call site changed. No request was run.
+
+Unknown: which transfer mechanism remains undocumented at fb54e43.
+
+Next: re-fetch, then inspect `oag_api::transfer` at the newer core commit.
