@@ -2560,3 +2560,17 @@ is not shown. No page was rendered.
 Unknown: which evidence fields the assertion page exposes.
 
 Next: trace `oag_api::human::evidence_view` and the assertion evidence template.
+
+## 2026-11-22 — finding 0212: assertion-page evidence subset
+
+All six source branches fetched successfully; heads unchanged. Examined the
+evidence view, assertion handler, template, storage query, and diff.
+
+Learned: the page shows type/title/excerpt/URI/hash only. Evidence ID,
+timestamps, and metadata are omitted from the view; redaction removes displayed
+text. URI is escaped but not scheme-checked. No page was rendered.
+
+Unknown: what verification, dispute, and retraction state the page exposes.
+
+Next: trace `observation_view`, `dispute_view`, `retraction_view`, and their
+assertion-template sections.
