@@ -2611,3 +2611,16 @@ rebuild was run.
 Unknown: full projection-wipe boundary across every schema table.
 
 Next: audit `clear_projection_tables` against the schema.
+
+## 2026-11-22 — finding 0216: exact rebuild wipe boundary
+
+All six source branches fetched successfully; heads unchanged. Audited the
+hardcoded delete list, rebuild transaction, schema inventory, and scoped diff.
+
+Learned: rebuild deletes exactly eleven derived graph tables child-first. Event
+tables, peer tables, operator-state tables, and several caches/indexes survive.
+Only evidence and actor redactions are reapplied; suppression remains a live
+filter. Cache survival outside the documented exclusions is an observed
+consequence, not a stated policy. No rebuild was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
