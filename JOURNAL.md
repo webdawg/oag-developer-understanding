@@ -2435,3 +2435,17 @@ occurs at ID derivation. No node was inserted.
 Unknown: how aliases accumulate separately from the canonical node row.
 
 Next: trace `oag_storage::repo::nodes` alias insertion and listing.
+
+## 2026-11-22 — finding 0203: separate accumulating aliases
+
+All six source branches fetched successfully; heads unchanged. Examined alias
+declaration, projection, storage key, listing, and diff.
+
+Learned: aliases are separate rows keyed by (node_id, alias); first row's alias
+type survives repeats. Declaration requires graph:assert and an existing node;
+projection rejects unknown types. source_assertion is currently None and listing
+has no ORDER BY. No event was committed.
+
+Unknown: how the human UI renders alias type/source.
+
+Next: trace alias rendering in `oag-api/src/human.rs`.
