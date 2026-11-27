@@ -2519,3 +2519,16 @@ still treats unparseable stored strings as neutral. No request was run.
 Unknown: which timestamp strings parse and how MCP differs.
 
 Next: trace `oag_api::dto::parse_timestamp` and `now_or`.
+
+## 2026-11-22 — finding 0209: RFC3339 timestamp boundary
+
+All six source branches fetched successfully; heads unchanged. Examined the
+REST timestamp parser, evidence/assert DTOs, verify default, MCP clock, and
+diff.
+
+Learned: REST parses RFC3339 to Unix seconds, discarding subsecond precision.
+Missing evidence/assert timestamps stay absent; missing verify timestamp uses
+the server clock. MCP always uses its current time. Invalid strings fail before
+service and counters. No request was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
