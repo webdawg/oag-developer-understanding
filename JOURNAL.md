@@ -2406,3 +2406,18 @@ validation. Nothing was asserted.
 Unknown: how EdgeId derivation makes normalized edges reusable.
 
 Next: trace `oag_core::edge::EdgeId`.
+
+## 2026-11-22 — finding 0201: deterministic edge identity
+
+All six source branches fetched successfully; heads unchanged. Examined Edge,
+EdgeId::from_triple, domain-separated Hash32, and edge insert-if-missing.
+
+Learned: edge ID hashes subject_hex:predicate:object_hex under OAG:EDGE:v1:,
+using normalized predicates. Actor/status/confidence/time are excluded.
+Direction matters; repeated triples reuse the first edge row and timestamp. No
+edge was inserted.
+
+Unknown: which canonical identifiers converge on one node and what repeat
+inserts preserve.
+
+Next: trace `oag_core::NodeId::from_canonical_identifier` and node insertion.
