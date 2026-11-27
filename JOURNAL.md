@@ -2665,3 +2665,15 @@ ID. No signature operation was run.
 Unknown: which EventPayload variants and type strings can be signed.
 
 Next: trace `oag_events::payload::EventPayload`.
+
+## 2026-11-22 — finding 0220: closed event payload vocabulary
+
+All six source branches fetched successfully; heads unchanged. Examined the
+EventPayload enum, serde tag, payload structs, legacy defaults, and diff.
+
+Learned: exactly ten variants are accepted under SCREAMING_SNAKE_CASE
+event_type tags flattened into signed events. NODE_DECLARE is excluded;
+NODE_ALIAS included. AddEvidence's newer fields default for legacy events, but
+unknown variants cannot deserialize. No event was built.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
