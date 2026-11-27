@@ -2703,3 +2703,16 @@ dropped at auth, leaving empty permissions. Actors are submitter roles, not
 network peers. No actor or key was created.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0223: cheap canonical identifiers
+
+All six source branches fetched successfully; heads unchanged. Examined
+canonical_identifier, UUID helper, service callers, NodeId hashing, and diff.
+
+Learned: canonical_identifier lowercases/trims kind and trims value with no
+validation. generate_uuid_identifier exists without a production caller in this
+checkout. NodeId hashes the exact string. No node or UUID was generated.
+
+Unknown: what roadmap proposals are and how they are anchored.
+
+Next: trace `oag_graph::roadmap`.
