@@ -2490,3 +2490,17 @@ one-key grouping description. No score was run.
 Unknown: how verification result weights combine into agreement.
 
 Next: trace `oag_graph::corroboration::verify_result_weight`.
+
+## 2026-11-22 — finding 0207: fixed verification weights
+
+All six source branches fetched successfully; heads unchanged. Examined result
+weights, observation collection, and agreement combination.
+
+Learned: confirmed/changed/unknown/unreachable/not_confirmed/contradicted map to
+1/0.3/0/0/-0.5/-1; unparseable is 0. Only active assertions' observations count.
+Their mean is rescaled and averaged equally with active-vs-disputed ratio. No
+time or actor weighting. No score was run.
+
+Unknown: which result strings are parsed into typed observations at write time.
+
+Next: trace `oag_core::assertion::VerifyResult` and REST/MCP verify handlers.
