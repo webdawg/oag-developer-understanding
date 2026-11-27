@@ -2624,3 +2624,16 @@ filter. Cache survival outside the documented exclusions is an observed
 consequence, not a stated policy. No rebuild was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0217: peer ID derivation
+
+All six source branches fetched successfully; heads unchanged. Examined peer-ID
+derivation, Base32 encoding/parsing, identity storage, and scoped diff.
+
+Learned: PeerId hashes the Ed25519 verifying key with plain BLAKE3 and renders
+as oagp_ plus lowercase unpadded Base32. Parsing accepts uppercase suffix but
+requires 32 bytes. from_bytes does not prove key derivation. No key was used.
+
+Unknown: exact signed message and cross-domain failure guarantee.
+
+Next: trace `oag_crypto::sign_with_domain` and `verify_with_domain`.
