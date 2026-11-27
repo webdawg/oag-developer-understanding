@@ -2421,3 +2421,17 @@ Unknown: which canonical identifiers converge on one node and what repeat
 inserts preserve.
 
 Next: trace `oag_core::NodeId::from_canonical_identifier` and node insertion.
+
+## 2026-11-22 — finding 0202: first node metadata wins
+
+All six source branches fetched successfully; heads unchanged. Examined NodeId
+derivation, canonicalization, projector resolution, and insert-if-missing.
+
+Learned: NodeId hashes canonical identifier bytes under OAG:NODE:v1:. The
+projector inserts only when absent; later assertions reuse the row without
+updating node type/name/description/metadata/created_at. No string validation
+occurs at ID derivation. No node was inserted.
+
+Unknown: how aliases accumulate separately from the canonical node row.
+
+Next: trace `oag_storage::repo::nodes` alias insertion and listing.
