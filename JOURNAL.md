@@ -2677,3 +2677,17 @@ NODE_ALIAS included. AddEvidence's newer fields default for legacy events, but
 unknown variants cannot deserialize. No event was built.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0221: node and alias type vocabularies
+
+All six source branches fetched successfully; heads unchanged. Examined node
+type newtype, known values, node construction, alias enum, and projection.
+
+Learned: NodeType trims/lowercases arbitrary strings with no validator;
+AliasType accepts exactly six snake_case values and unknown aliases fail
+projection. peer node type is distinct from ActorType::Peer. No node was
+written.
+
+Unknown: actor kinds and permission strings.
+
+Next: trace `oag_core::actor::ActorType` and `Permission`.
