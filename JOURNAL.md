@@ -2546,3 +2546,17 @@ run.
 Unknown: what the human assertion page displays from provenance.
 
 Next: trace `oag-api/src/human.rs` assertion-page provenance rendering.
+
+## 2026-11-22 — finding 0211: assertion-page signature states
+
+All six source branches fetched successfully; heads unchanged. Examined the
+assertion handler, provenance template branches, and scoped diff.
+
+Learned: the page shows origin peer and a three-state signature result: valid,
+INVALID against a known key, or unverifiable without a key. Missing provenance
+is unknown. Actor and origin are displayed separately, and raw signed payload
+is not shown. No page was rendered.
+
+Unknown: which evidence fields the assertion page exposes.
+
+Next: trace `oag_api::human::evidence_view` and the assertion evidence template.
