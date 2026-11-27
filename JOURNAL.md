@@ -2585,3 +2585,15 @@ but drops actor IDs and event IDs. Lists are unordered; only the first supersede
 history event is linked; final status is shown separately. No page was rendered.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0214: durable operator interventions
+
+All six source branches fetched successfully; heads unchanged. Examined the
+three local operator-state repositories and rebuild reapplication.
+
+Learned: evidence/actor redaction tombstones and search suppressions are stored
+outside the wipe list. Redactions are one-way locally; suppression is idempotent
+and reversible. Rebuild reapplies redactions after event replay; suppression is
+a live query filter. No rebuild was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
