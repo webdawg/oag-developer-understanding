@@ -2574,3 +2574,14 @@ Unknown: what verification, dispute, and retraction state the page exposes.
 
 Next: trace `observation_view`, `dispute_view`, `retraction_view`, and their
 assertion-template sections.
+
+## 2026-11-22 — finding 0213: reduced audit display
+
+All six source branches fetched successfully; heads unchanged. Examined audit
+view structs, handler collection, template sections, storage queries, and diff.
+
+Learned: the page shows observation result/time and dispute/retraction reason/time
+but drops actor IDs and event IDs. Lists are unordered; only the first supersede
+history event is linked; final status is shown separately. No page was rendered.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
