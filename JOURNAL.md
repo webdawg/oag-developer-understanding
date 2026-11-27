@@ -2475,3 +2475,18 @@ score was run.
 Unknown: how URI control groups combine source identity with these weights.
 
 Next: trace `oag_graph::corroboration::control_group_for_uri`.
+
+## 2026-11-22 — finding 0206: heuristic control groups
+
+All six source branches fetched successfully; heads unchanged. Examined URI
+control-group parsing, multi-tenant and suffix lists, actor fallback, and
+union-find component scoring.
+
+Learned: known multi-tenant hosts group by host/first path segment; other hosts
+use an approximate registrable domain; bad URIs fall back to actor keys. Content
+and source keys are now unioned into connected components, correcting the older
+one-key grouping description. No score was run.
+
+Unknown: how verification result weights combine into agreement.
+
+Next: trace `oag_graph::corroboration::verify_result_weight`.
