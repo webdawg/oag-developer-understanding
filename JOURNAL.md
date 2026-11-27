@@ -2449,3 +2449,14 @@ has no ORDER BY. No event was committed.
 Unknown: how the human UI renders alias type/source.
 
 Next: trace alias rendering in `oag-api/src/human.rs`.
+
+## 2026-11-22 — finding 0204: alias rendering omits provenance
+
+All six source branches fetched successfully; heads unchanged. Examined node
+page alias mapping, Askama template, storage order, and diff.
+
+Learned: the UI renders alias text and type only, beneath the frozen primary
+node name. No source assertion or timestamp is shown, and alias order is
+unspecified. Askama escapes the displayed text. No page was rendered.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
