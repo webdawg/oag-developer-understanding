@@ -2651,3 +2651,17 @@ were read only.
 Unknown: how event IDs derive from signed canonical envelopes.
 
 Next: trace `oag_events::envelope::SignedEvent` and `verify_and_derive_id`.
+
+## 2026-11-22 — finding 0219: derived event IDs
+
+All six source branches fetched successfully; heads unchanged. Examined event
+envelopes, build pipeline, verification, EventId domain, and scoped diff.
+
+Learned: event IDs are BLAKE3 of the canonical signed envelope under
+OAG:EVENT:v1:, while signatures cover only canonical unsigned bytes. No event
+ID field exists; verification recomputes it. Signature text participates in the
+ID. No signature operation was run.
+
+Unknown: which EventPayload variants and type strings can be signed.
+
+Next: trace `oag_events::payload::EventPayload`.
