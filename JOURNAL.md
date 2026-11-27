@@ -2392,3 +2392,17 @@ ok/error status. Query strings and MCP spans remain deferred. No request or log
 sink was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0200: open normalized predicates
+
+All six source branches fetched successfully; heads unchanged. Examined the
+predicate newtype, v0 vocabulary, projection normalization, and input checks.
+
+Learned: predicates are open strings trimmed, lowercased, and whitespace-joined
+with underscores at projection time. KNOWN_PREDICATES documents but does not
+enforce; unknown and empty predicates are accepted subject to byte-length
+validation. Nothing was asserted.
+
+Unknown: how EdgeId derivation makes normalized edges reusable.
+
+Next: trace `oag_core::edge::EdgeId`.
