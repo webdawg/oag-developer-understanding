@@ -2532,3 +2532,17 @@ the server clock. MCP always uses its current time. Invalid strings fail before
 service and counters. No request was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0210: re-verified event provenance
+
+All six source branches fetched successfully; heads unchanged. Examined the
+provenance service, signature re-derivation, human caller, and diff.
+
+Learned: provenance reopens the raw event by assertion ID, picks local or peer
+key, and re-verifies full envelope plus derived ID. Missing key is reported as
+unknown, not valid; malformed stored origin/key is InvalidInput. No check was
+run.
+
+Unknown: what the human assertion page displays from provenance.
+
+Next: trace `oag-api/src/human.rs` assertion-page provenance rendering.
