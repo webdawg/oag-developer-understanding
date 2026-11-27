@@ -2504,3 +2504,18 @@ time or actor weighting. No score was run.
 Unknown: which result strings are parsed into typed observations at write time.
 
 Next: trace `oag_core::assertion::VerifyResult` and REST/MCP verify handlers.
+
+## 2026-11-22 — finding 0208: verify result boundary
+
+All six source branches fetched successfully; heads unchanged. Examined the
+VerifyResult vocabulary, REST/MCP parsing order, service payload, and defensive
+score parse.
+
+Learned: six exact snake_case result strings are accepted. REST and MCP parse
+before GraphService, so unknown strings create no event and no verification
+counter. REST accepts optional observed_at; MCP uses current time. Scoring
+still treats unparseable stored strings as neutral. No request was run.
+
+Unknown: which timestamp strings parse and how MCP differs.
+
+Next: trace `oag_api::dto::parse_timestamp` and `now_or`.
