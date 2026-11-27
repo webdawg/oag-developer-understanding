@@ -2637,3 +2637,17 @@ requires 32 bytes. from_bytes does not prove key derivation. No key was used.
 Unknown: exact signed message and cross-domain failure guarantee.
 
 Next: trace `oag_crypto::sign_with_domain` and `verify_with_domain`.
+
+## 2026-11-22 — finding 0218: domain-separated signing message
+
+All six source branches fetched successfully; heads unchanged. Examined the
+sign/verify helpers, canonical JSON wrapper, domain constants, tests, and diff.
+
+Learned: signatures cover raw `domain_prefix || canonical_json_bytes`, with no
+added delimiter except the constants' trailing colon. Wrong bytes or wrong
+domain fail verification. Helpers do not validate JSON or domain shape. Tests
+were read only.
+
+Unknown: how event IDs derive from signed canonical envelopes.
+
+Next: trace `oag_events::envelope::SignedEvent` and `verify_and_derive_id`.
