@@ -2691,3 +2691,15 @@ written.
 Unknown: actor kinds and permission strings.
 
 Next: trace `oag_core::actor::ActorType` and `Permission`.
+
+## 2026-11-22 — finding 0222: actor and permission vocabularies
+
+All six source branches fetched successfully; heads unchanged. Examined actor
+types, actor fields, permission strings, auth-time parsing, and diff.
+
+Learned: ActorType has nine exact snake_case values; Permission has six fixed
+strings including graph:crawl. Unknown stored permission strings are silently
+dropped at auth, leaving empty permissions. Actors are submitter roles, not
+network peers. No actor or key was created.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
