@@ -2460,3 +2460,18 @@ node name. No source assertion or timestamp is shown, and alias order is
 unspecified. Askama escapes the displayed text. No page was rendered.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0205: closed evidence vocabulary and weights
+
+All six source branches fetched successfully; heads unchanged. Examined
+EvidenceType parsing, projection rejection, evidence record, and corroboration
+weight constants.
+
+Learned: 13 exact snake_case evidence labels are accepted; unknown strings fail
+projection. Each label has a fixed corroboration weight, with service_receipt at
+0.85 and other at 0.15. Evidence hash syntax is still unchecked. No event or
+score was run.
+
+Unknown: how URI control groups combine source identity with these weights.
+
+Next: trace `oag_graph::corroboration::control_group_for_uri`.
