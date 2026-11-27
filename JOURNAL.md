@@ -2597,3 +2597,17 @@ and reversible. Rebuild reapplies redactions after event replay; suppression is
 a live query filter. No rebuild was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0215: authority cache lifecycle
+
+All six source branches fetched successfully; heads unchanged. Examined
+authority recompute, score storage, rebuild exclusion, and scoped diff.
+
+Learned: recompute clears all authority rows before per-node upserts without one
+transaction, so a partial failure leaves partial scores. Rebuild deliberately
+preserves node_authority because edges replay byte-identically. No recompute or
+rebuild was run.
+
+Unknown: full projection-wipe boundary across every schema table.
+
+Next: audit `clear_projection_tables` against the schema.
