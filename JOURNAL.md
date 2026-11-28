@@ -2814,3 +2814,14 @@ evidence metadata; each side writes locally and sync later corroborates. No
 transfer was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0232: transfer receipt checks
+
+All six source branches fetched successfully; heads unchanged. Examined receipt
+construction, verification, mutual hash, and download-then-compare contrast.
+
+Learned: receipts bind expected CID/client nonce, peer key, signature, 300s
+window, and mutual hash over claimed content_hash. Verification does not hash
+downloaded bytes; the client path does that separately. No transfer was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
