@@ -2775,3 +2775,15 @@ REST. Tools require Authorization: Bearer, record actor in an mcp_tool span, and
 log duration/result. No MCP server or tool was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0229: local commit serialization
+
+All six source branches fetched successfully; heads unchanged. Examined the
+GraphService commit lock, commit_local_event transaction, and scoped diff.
+
+Learned: commit_event holds a process-local mutex, but BEGIN IMMEDIATE in
+commit_local_event is now the primary protection for same-peer concurrency.
+Event insert, projection, refs, and origin advance share one transaction. No
+event was committed.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
