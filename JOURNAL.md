@@ -2852,3 +2852,16 @@ projection rejects unknown values. It is provenance, not confidence or truth.
 No assertion was created.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0235: REST router global limits
+
+All six source branches fetched successfully; heads unchanged. Examined router
+routes/layers, fixed-window limiter, header keying, Retry-After, and transfer
+reuse.
+
+Learned: a 4 MiB body cap and 120/min fixed-window limiter apply to all REST
+routes, including unauthenticated ones. Keys are raw Authorization or
+"anonymous"; expired windows are swept above 10k keys. Retry-After and API
+latency are newer. No request was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
