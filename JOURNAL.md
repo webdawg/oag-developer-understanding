@@ -2865,3 +2865,18 @@ routes, including unauthenticated ones. Keys are raw Authorization or
 latency are newer. No request was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0236: AppState sharing and metric wiring
+
+All six source branches fetched successfully; heads unchanged. Examined shared
+GraphService/CrawlerService, separate SyncService handle, counter injection,
+outbound timeouts, and diff.
+
+Learned: REST/MCP/crawler share one GraphService; metrics SyncService is a
+separate read-only handle. Sync errors and replication bytes need the real loop's
+Arcs or stay zero. API peer requests now use 10s connect/120s total bounds. No
+server was started.
+
+Unknown: where serve wires live counters relative to router startup.
+
+Next: trace `oag-cli/src/serve.rs` counter wiring.
