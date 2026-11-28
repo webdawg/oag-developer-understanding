@@ -2739,3 +2739,15 @@ and optionally null authority. It is a direct lookup, so suppression does not
 hide it. Edges/assertions/provenance are separate endpoints. No request was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0226: full REST assertion audit rows
+
+All six source branches fetched successfully; heads unchanged. Examined the
+REST assertion handler, storage structs, human-view contrast, and separate
+provenance/history surfaces.
+
+Learned: GET /api/v1/assertions/{id} returns full assertion, evidence,
+observations, disputes, and retractions with IDs and timestamps. No status or
+redaction filtering; provenance/history are separate. No request was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
