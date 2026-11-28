@@ -2825,3 +2825,17 @@ window, and mutual hash over claimed content_hash. Verification does not hash
 downloaded bytes; the client path does that separately. No transfer was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0233: assertion confidence semantics
+
+All six source branches fetched successfully; heads unchanged. Examined the
+assertion struct, projection construction, status overwrites, and corroboration
+separation.
+
+Learned: actor_confidence is submitter-supplied, not system confidence.
+Assertion IDs equal creating event IDs; repeated triples add rows on one edge;
+status is a derived last write. No assertion was created.
+
+Unknown: how extraction-method origins are represented.
+
+Next: trace `oag_core::ExtractionMethod`.
