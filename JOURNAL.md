@@ -2728,3 +2728,14 @@ Listing is read-only and has no acceptance threshold or vote. No proposal was
 submitted.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0225: node JSON composition
+
+All six source branches fetched successfully; heads unchanged. Examined the
+node handler, alias/authority services, suppression boundary, and diff.
+
+Learned: GET /api/v1/nodes/{id} requires graph:read and returns node, aliases,
+and optionally null authority. It is a direct lookup, so suppression does not
+hide it. Edges/assertions/provenance are separate endpoints. No request was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
