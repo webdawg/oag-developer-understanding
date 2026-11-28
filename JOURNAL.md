@@ -2764,3 +2764,14 @@ field lengths, evidence count, evidence type, and permissions are checked later.
 pinned_cid is unverified. No request was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0228: MCP service and auth boundary
+
+All six source branches fetched successfully; heads unchanged. Examined MCP
+streamable HTTP service, bearer auth, error mapping, and tool tracing.
+
+Learned: MCP session factory clones the same GraphService/embedding/crawler as
+REST. Tools require Authorization: Bearer, record actor in an mcp_tool span, and
+log duration/result. No MCP server or tool was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
