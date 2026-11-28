@@ -2880,3 +2880,16 @@ server was started.
 Unknown: where serve wires live counters relative to router startup.
 
 Next: trace `oag-cli/src/serve.rs` counter wiring.
+
+## 2026-11-22 — finding 0237: live sync counter wiring order
+
+All six source branches fetched successfully; heads unchanged. Examined serve
+counter capture, service configuration, gossip loop startup, AppState injection,
+and router build order.
+
+Learned: live sync error and replication byte Arcs are captured before loops
+spawn and injected into AppState before REST/MCP routers are built. The counters
+are process-local shared atomics; omission would make metrics read zero. No
+server was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
