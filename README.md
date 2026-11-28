@@ -9,7 +9,7 @@ License: [AGPL-3.0-or-later](LICENSE).
 ## Start here
 
 1. [JOURNAL.md](JOURNAL.md) — what has been investigated and what comes next.
-2. [findings/](findings/) — mechanism findings `0001` through `0226`.
+2. [findings/](findings/) — mechanism findings `0001` through `0227`.
 3. [flows/connection-register.md](flows/connection-register.md) — established and proposed cross-repository connections.
 4. [diagrams/0001-local-assertion-commit.md](diagrams/0001-local-assertion-commit.md) — local assertion sequence.
 
@@ -55,7 +55,8 @@ integration.
   views, observation display versus scoring, closed evidence types and
   weights, verification result weights, visibility, heuristic source control
   groups, and corroboration scoring.
-- REST and MCP authorization, human-UI query keys, unauthenticated status and
+- REST and MCP authorization, REST write DTO boundaries, human-UI query keys,
+  unauthenticated status and
   metrics including verification-counter, verification-result, timestamp,
   latency, and chain-fragment boundaries, gateway signature, fanout, nonce, relay bounds, NTP wire answers
   kept separate from graph clocks, crawler-shared DNS validation and pinning,

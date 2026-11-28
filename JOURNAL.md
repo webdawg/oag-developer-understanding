@@ -2751,3 +2751,16 @@ observations, disputes, and retractions with IDs and timestamps. No status or
 redaction filtering; provenance/history are separate. No request was run.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0227: REST write DTO boundary
+
+All six source branches fetched successfully; heads unchanged. Examined
+EvidenceRequest, AssertRequest, DeclareAliasRequest, service validation, and
+diff.
+
+Learned: JSON `type` maps to evidence_type; REST assertions cannot set
+extraction_method and become Direct. Timestamps and alias types parse at DTO;
+field lengths, evidence count, evidence type, and permissions are checked later.
+pinned_cid is unverified. No request was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
