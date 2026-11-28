@@ -2839,3 +2839,16 @@ status is a derived last write. No assertion was created.
 Unknown: how extraction-method origins are represented.
 
 Next: trace `oag_core::ExtractionMethod`.
+
+## 2026-11-22 — finding 0234: extraction method provenance
+
+All six source branches fetched successfully; heads unchanged. Examined the
+four-value ExtractionMethod enum, service defaults, projection rejection, and
+transfer usage.
+
+Learned: extraction method records how a candidate was produced, with four
+exact strings. REST defaults to direct; transfer client uses verification;
+projection rejects unknown values. It is provenance, not confidence or truth.
+No assertion was created.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
