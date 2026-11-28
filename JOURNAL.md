@@ -2716,3 +2716,15 @@ checkout. NodeId hashes the exact string. No node or UUID was generated.
 Unknown: what roadmap proposals are and how they are anchored.
 
 Next: trace `oag_graph::roadmap`.
+
+## 2026-11-22 — finding 0224: roadmap proposals as assertions
+
+All six source branches fetched successfully; heads unchanged. Examined the
+roadmap hub, predicate, listing sort, REST/human callers, and diff.
+
+Learned: proposals are ordinary instance_of assertions against a lazily created
+hub, ranked by active assertions, source independence, evidence strength.
+Listing is read-only and has no acceptance threshold or vote. No proposal was
+submitted.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
