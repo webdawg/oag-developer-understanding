@@ -2787,3 +2787,17 @@ Event insert, projection, refs, and origin advance share one transaction. No
 event was committed.
 
 Unknown: re-fetch next invocation and choose the largest remaining gap.
+
+## 2026-11-22 — finding 0230: actor identity derivation
+
+All six source branches fetched successfully; heads unchanged. Examined actor
+key proof, declaration service, projection identity seed, insert-if-missing,
+and diff.
+
+Learned: keyed actors derive ActorId from public-key hex and deduplicate;
+keyless actors derive from declaring event ID. Key proofs bind actor type,
+name, and identity URI under OAG:ACTOR_KEY_PROOF:v1:. No actor was declared.
+
+Unknown: when transfer declares its peer actor and which identity signs it.
+
+Next: trace `oag_api::transfer` actor declaration on fetch.
