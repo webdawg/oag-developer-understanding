@@ -2801,3 +2801,16 @@ name, and identity URI under OAG:ACTOR_KEY_PROOF:v1:. No actor was declared.
 Unknown: when transfer declares its peer actor and which identity signs it.
 
 Next: trace `oag_api::transfer` actor declaration on fetch.
+
+## 2026-11-22 — finding 0231: transfer receipts as local assertions
+
+All six source branches fetched successfully; heads unchanged. Examined
+record_transfer actor/auth setup, assertion/evidence fields, server call site,
+and diff.
+
+Learned: transfer records are local sent_to assertions by a key-derived Peer
+actor with synthesized GraphAssert auth. Receipt details live in service_receipt
+evidence metadata; each side writes locally and sync later corroborates. No
+transfer was run.
+
+Unknown: re-fetch next invocation and choose the largest remaining gap.
